@@ -4,7 +4,7 @@ function CTA({ className }) {
       href="https://floriansimunek.trafft.com/"
       target="_blank"
       rel="noreferrer"
-      className={`${className} text-black text-2xl uppercase font-extrabold bg-primary rounded-2xl flex justify-between items-center gap-2 px-8 py-12`}
+      className={`${className} text-black text-2xl md:text-4xl uppercase font-extrabold bg-primary rounded-2xl flex justify-between items-center gap-2 px-8 py-12`}
     >
       <span className="flex flex-col text-start">
         Prendre <span>rendrez-vous</span>
@@ -15,7 +15,7 @@ function CTA({ className }) {
         viewBox="0 0 24 24"
         strokeWidth={3}
         stroke="currentColor"
-        className="w-12 h-12"
+        className="w-12 h-12 md:w-16 md:h-16"
       >
         <path
           strokeLinecap="round"

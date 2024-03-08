@@ -8,7 +8,9 @@ function Section({ title, primary, id }) {
       } w-full min-h-svh rounded-4xl p-8 flex flex-col justify-between items-center`}
       id={id}
     >
-      <h2 className="uppercase font-extrabold text-5xl">{title}</h2>
+      <h2 className="uppercase font-extrabold text-5xl md:text-6xl w-full text-start">
+        {title}
+      </h2>
       <div
         className={`bottom w-full flex justify-between items-center ${
           primary ? 'flex-row-reverse' : ''
