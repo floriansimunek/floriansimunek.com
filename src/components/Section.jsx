@@ -5,10 +5,10 @@ function Section({ title, primary, id }) {
     <div
       className={`${
         primary ? 'bg-primary' : 'bg-white'
-      } w-full min-h-svh rounded-4xl p-8 flex flex-col justify-between items-center`}
+      } w-full min-h-svh rounded-4xl p-8 lg:p-16 flex flex-col justify-between items-center`}
       id={id}
     >
-      <h2 className="uppercase font-extrabold text-5xl md:text-6xl w-full text-start">
+      <h2 className="uppercase font-extrabold text-5xl md:text-6xl lg:text-7xl w-full text-start">
         {title}
       </h2>
       <div
@@ -23,7 +23,7 @@ function Section({ title, primary, id }) {
             viewBox="0 0 24 24"
             strokeWidth={3}
             stroke="currentColor"
-            className="w-12 h-12 rotate-90"
+            className="w-12 h-12 rotate-90 lg:w-16 lg:h-16"
           >
             <path
               strokeLinecap="round"

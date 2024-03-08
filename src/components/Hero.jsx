@@ -88,7 +88,10 @@ function Hero() {
 
 function Container({ children, className, ...props }) {
   return (
-    <main className={`${className} w-full h-fit lg:h-svh p-2`} {...props}>
+    <main
+      className={`${className} w-full h-fit lg:h-svh p-2 lg:p-4`}
+      {...props}
+    >
       {children}
     </main>
   );
