@@ -28,23 +28,33 @@ function Footer() {
               Navigation
             </li>
             <li>
-              <a href="" className="text-lg">
-                Lien 1
+              <a href="#website-creation" className="text-lg">
+                Créez votre site web
               </a>
             </li>
             <li>
-              <a href="" className="text-lg">
-                Lien 1
+              <a href="#react-app-creation" className="text-lg">
+                Créez votre application React
               </a>
             </li>
             <li>
-              <a href="" className="text-lg">
-                Lien 1
+              <a href="#html-css-integration" className="text-lg">
+                Intégration HTML & CSS
               </a>
             </li>
             <li>
-              <a href="" className="text-lg">
-                Lien 1
+              <a href="#upgrade-repair-optimize" className="text-lg">
+                Améliorez, réparez ou optimisez votre site
+              </a>
+            </li>
+            <li>
+              <a href="#model-creation" className="text-lg">
+                Créez la maquette de votre site web
+              </a>
+            </li>
+            <li>
+              <a href="#learn-to-create" className="text-lg">
+                Créez votre site web par vous-même
               </a>
             </li>
           </ul>
@@ -54,23 +64,53 @@ function Footer() {
               Réseaux
             </li>
             <li>
-              <a href="" className="text-lg">
-                Lien 1
+              <a
+                href="https://www.linkedin.com/in/simunek-florian/"
+                className="text-lg"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
               </a>
             </li>
             <li>
-              <a href="" className="text-lg">
-                Lien 1
+              <a
+                href="https://github.com/floriansimunek"
+                className="text-lg"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
               </a>
             </li>
             <li>
-              <a href="" className="text-lg">
-                Lien 1
+              <a
+                href="https://comeup.com/fr/@florian-s"
+                className="text-lg"
+                target="_blank"
+                rel="noreferrer"
+              >
+                ComeUp
               </a>
             </li>
             <li>
-              <a href="" className="text-lg">
-                Lien 1
+              <a
+                href="https://www.malt.fr/profile/floriansimunek"
+                className="text-lg"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Malt
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.codeur.com/-florian_s"
+                className="text-lg"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Codeur
               </a>
             </li>
           </ul>
@@ -79,23 +119,23 @@ function Footer() {
               Liens utiles
             </li>
             <li>
-              <a href="" className="text-lg">
-                Lien 1
+              <a
+                href="https://bento.me/florian-simunek"
+                className="text-lg"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Bento
               </a>
             </li>
             <li>
-              <a href="" className="text-lg">
-                Lien 1
-              </a>
-            </li>
-            <li>
-              <a href="" className="text-lg">
-                Lien 1
-              </a>
-            </li>
-            <li>
-              <a href="" className="text-lg">
-                Lien 1
+              <a
+                href="mailto:contact@floriansimunek.com"
+                className="text-lg"
+                target="_blank"
+                rel="noreferrer"
+              >
+                contact@floriansimunek.com
               </a>
             </li>
           </ul>

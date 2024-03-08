@@ -1,11 +1,12 @@
 import ButtonLink from './ButtonLink';
 
-function Section({ title, primary }) {
+function Section({ title, primary, id }) {
   return (
     <div
       className={`${
         primary ? 'bg-primary' : 'bg-white'
       } w-full min-h-svh rounded-4xl p-8 flex flex-col justify-between items-center`}
+      id={id}
     >
       <h2 className="uppercase font-extrabold text-5xl">{title}</h2>
       <div
