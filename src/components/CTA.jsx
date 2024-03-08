@@ -1,12 +1,12 @@
-function CTA() {
+function CTA({ className }) {
   return (
     <a
       href="https://floriansimunek.trafft.com/"
       target="_blank"
       rel="noreferrer"
-      className="text-black text-2xl uppercase font-extrabold bg-primary rounded-2xl flex justify-between items-center gap-8 px-8 py-12"
+      className={`${className} text-black text-2xl uppercase font-extrabold bg-primary rounded-2xl flex justify-between items-center gap-2 px-8 py-12`}
     >
-      <span className="flex flex-col">
+      <span className="flex flex-col text-start">
         Prendre <span>rendrez-vous</span>
       </span>
       <svg
@@ -15,7 +15,7 @@ function CTA() {
         viewBox="0 0 24 24"
         strokeWidth={3}
         stroke="currentColor"
-        className="w-16 h-16"
+        className="w-12 h-12"
       >
         <path
           strokeLinecap="round"

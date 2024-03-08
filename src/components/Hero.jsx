@@ -6,8 +6,8 @@ function Hero() {
   return (
     <Container className="flex flex-col gap-2">
       <Top className="flex flex-col gap-2">
-        <div className="bg-primary text-black p-4 rounded-2xl w-full h-fit flex flex-col justify-between items-start gap-36">
-          <h1 className="text-4xl font-extrabold uppercase">
+        <div className="bg-primary text-black p-4 rounded-2xl w-full h-fit flex flex-col justify-between items-start gap-64">
+          <h1 className="text-6xl font-extrabold uppercase">
             Prêt à faire de votre vision une réalité ?
           </h1>
           <div className="flex flex-col gap-2 w-full">

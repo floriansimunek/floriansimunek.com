@@ -5,10 +5,14 @@ function Section({ title, primary }) {
     <div
       className={`${
         primary ? 'bg-primary' : 'bg-white'
-      } w-full h-svh rounded-4xl p-8 flex flex-col justify-between items-center`}
+      } w-full min-h-svh rounded-4xl p-8 flex flex-col justify-between items-center`}
     >
       <h2 className="uppercase font-extrabold text-5xl">{title}</h2>
-      <div className="bottom w-full flex justify-between items-center">
+      <div
+        className={`bottom w-full flex justify-between items-center ${
+          primary ? 'flex-row-reverse' : ''
+        }`}
+      >
         <div className="left">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +29,11 @@ function Section({ title, primary }) {
             />
           </svg>
         </div>
-        <div className="right flex flex-col gap-2 justify-center items-end">
+        <div
+          className={`right flex flex-col gap-2 justify-center ${
+            primary ? 'items-start' : 'items-end'
+          }`}
+        >
           <ButtonLink className={`${primary ? '!bg-primary' : ''} uppercase`}>
             Demander un devis
           </ButtonLink>
