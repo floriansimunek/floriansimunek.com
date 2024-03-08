@@ -1,5 +1,6 @@
-import ButtonLink from './ButtonLink';
 import profilePicture from '@assets/pp.webp';
+import ButtonLink from './ButtonLink';
+import CTA from './CTA';
 
 function Hero() {
   return (
@@ -15,6 +16,7 @@ function Hero() {
                 className="!w-full text-center"
                 to="mailto:contact@floriansimunek.com"
                 target="_blank"
+                rel="noreferrer"
               >
                 contact@floriansimunek.com
               </ButtonLink>
@@ -24,6 +26,7 @@ function Hero() {
                 className="!w-full text-center"
                 to="https://www.linkedin.com/in/simunek-florian/"
                 target="_blank"
+                rel="noreferrer"
               >
                 LinkedIn
               </ButtonLink>
@@ -31,6 +34,7 @@ function Hero() {
                 className="!w-full text-center"
                 to="https://bento.me/florian-simunek"
                 target="_blank"
+                rel="noreferrer"
               >
                 Bento
               </ButtonLink>
@@ -55,7 +59,20 @@ function Hero() {
           </div>
         </div>
       </Top>
-      <Bottom className="flex flex-col gap-2"></Bottom>
+      <Bottom className="flex flex-col gap-2">
+        <div className="stats flex gap-2">
+          <Stat>
+            +140 <span className="font-bold text-xl">commandes</span>
+          </Stat>
+          <Stat>
+            100% <span className="font-bold text-xl">avis positifs</span>
+          </Stat>
+          <Stat className="hidden">
+            100% <span className="font-bold text-xl">complétion</span>
+          </Stat>
+        </div>
+        <CTA />
+      </Bottom>
     </Container>
   );
 }
@@ -105,6 +122,16 @@ function TextBanner({ bordered }) {
         </p>
       </div>
     </div>
+  );
+}
+
+function Stat({ className, children }) {
+  return (
+    <h3
+      className={`${className} bg-white text-black rounded-2xl w-full min-h-32 flex flex-col justify-center items-center uppercase font-extrabold text-2xl`}
+    >
+      {children}
+    </h3>
   );
 }
 
