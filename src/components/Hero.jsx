@@ -63,19 +63,19 @@ function Hero() {
         <div className="stats flex gap-2 lg:gap-4 lg:w-full">
           <Stat>
             +140
-            <span className="font-bold text-xl md:text-2xl lg:text-3xl">
+            <span className="font-bold text-xl md:text-2xl 2xl:text-3xl">
               commandes
             </span>
           </Stat>
           <Stat>
             100%
-            <span className="font-bold text-xl md:text-2xl lg:text-3xl">
+            <span className="font-bold text-xl md:text-2xl 2xl:text-3xl">
               avis positifs
             </span>
           </Stat>
           <Stat className="hidden lg:flex">
             100%
-            <span className="font-bold text-xl md:text-2xl lg:text-3xl">
+            <span className="font-bold text-xl md:text-2xl 2xl:text-3xl">
               complétion
             </span>
           </Stat>
@@ -140,7 +140,7 @@ function TextBanner({ bordered }) {
 function Stat({ className, children }) {
   return (
     <h3
-      className={`${className} bg-white text-black rounded-2xl w-full min-h-32 flex flex-col justify-center items-center uppercase font-extrabold text-2xl md:text-4xl lg:text-5xl`}
+      className={`${className} bg-white text-black rounded-2xl w-full min-h-32 flex flex-col justify-center items-center uppercase font-extrabold text-2xl md:text-4xl 2xl:text-5xl`}
     >
       {children}
     </h3>

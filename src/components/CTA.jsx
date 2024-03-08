@@ -4,7 +4,7 @@ function CTA({ className }) {
       href="https://floriansimunek.trafft.com/"
       target="_blank"
       rel="noreferrer"
-      className={`${className} text-black text-2xl md:text-4xl lg:text-5xl uppercase font-extrabold bg-primary rounded-2xl flex justify-between items-center gap-2 px-8 py-12`}
+      className={`${className} text-black text-2xl md:text-4xl 2xl:text-5xl uppercase font-extrabold bg-primary rounded-2xl flex justify-between lg:justify-around items-center gap-2 px-8 py-12`}
     >
       <span className="flex flex-col text-start lg:flex-row">
         Prendre&nbsp;<span>rendrez-vous</span>

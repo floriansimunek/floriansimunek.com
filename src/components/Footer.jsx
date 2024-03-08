@@ -19,15 +19,15 @@ function scrollToTop() {
 
 function Footer() {
   return (
-    <footer className="bg-white w-full min-h-svh rounded-4xl p-8 flex flex-col justify-between items-center gap-16">
+    <footer className="bg-white w-full min-h-svh rounded-4xl p-8 lg:p-16 flex flex-col justify-between items-center gap-16 lg:gap-32">
       <div className="top text-center flex flex-col gap-4 w-full">
-        <h4 className="uppercase text-2xl md:text-3xl font-bold">
+        <h4 className="uppercase text-2xl md:text-3xl lg:text-4xl font-bold">
           un projet ? construisons le ensemble !
         </h4>
-        <CTA />
+        <CTA className="lg:w-2/4 mx-auto lg:mt-8" />
       </div>
       <div className="middle w-full">
-        <nav className="w-full flex flex-col justify-center items-center gap-8">
+        <nav className="w-full flex flex-col justify-center items-center gap-8 lg:gap-16 lg:flex-row lg:items-start">
           <ul className="w-full flex flex-col gap-2">
             <li className="uppercase mb-2 font-bold text-2xl md:text-3xl w-full border-b-4 border-black">
               Navigation
@@ -66,8 +66,7 @@ function Footer() {
               </a>
             </li>
           </ul>
-
-          <ul className="w-full flex flex-col gap-2">
+          <ul className="w-full flex flex-col gap-2 lg:w-1/4">
             <li className="uppercase mb-2 font-bold text-2xl md:text-3xl w-full border-b-4 border-black">
               Réseaux
             </li>
@@ -122,7 +121,7 @@ function Footer() {
               </a>
             </li>
           </ul>
-          <ul className="w-full flex flex-col gap-2">
+          <ul className="w-full flex flex-col gap-2 lg:w-1/4">
             <li className="uppercase mb-2 font-bold text-2xl md:text-3xl w-full border-b-4 border-black">
               Liens utiles
             </li>
@@ -150,12 +149,12 @@ function Footer() {
         </nav>
       </div>
       <div className="bottom w-full flex justify-center items-end">
-        <div className="left w-full flex flex-col gap-4">
-          <p className="flex flex-col text-2xl font-bold">
+        <div className="left w-full flex flex-col gap-4 lg:gap-32 lg:flex-row lg:items-end">
+          <p className="flex flex-col text-2xl lg:text-5xl font-bold">
             &copy; {new Date().getFullYear()}
             <span className="uppercase">Florian SIMUNEK</span>
           </p>
-          <p className="flex flex-col font-bold text-xl">
+          <p className="flex flex-col font-bold text-xl lg:text-2xl">
             LOCAL TIME <span>{getTime()} UTC+1</span>
           </p>
         </div>
