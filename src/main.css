@@ -11,3 +11,21 @@
 body {
   background-color: black;
 }
+
+.text-wrapper .text-banner {
+  animation: infiniteBanner 10s linear infinite;
+}
+
+.text-wrapper:nth-child(odd) .text-banner {
+  animation: infiniteBanner 10s linear infinite reverse;
+}
+
+@keyframes infiniteBanner {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
