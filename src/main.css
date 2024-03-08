@@ -10,6 +10,7 @@
 
 body {
   background-color: black;
+  overflow-x: hidden;
 }
 
 .text-wrapper .text-banner {
@@ -28,4 +29,8 @@ body {
   100% {
     transform: translate3d(-50%, 0, 0);
   }
+}
+
+.rounded-4xl {
+  border-radius: 32px;
 }
