@@ -4,13 +4,13 @@ import CTA from './CTA';
 
 function Hero() {
   return (
-    <Container className="flex flex-col gap-2">
-      <Top className="flex flex-col gap-2 md:flex-row">
-        <div className="bg-primary text-black p-4 rounded-2xl w-full h-fit flex flex-col justify-between items-start gap-64">
-          <h1 className="text-6xl font-extrabold uppercase">
+    <Container className="flex flex-col gap-2 lg:gap-4">
+      <Top className="flex flex-col gap-2 lg:gap-4 md:flex-row lg:h-3/4">
+        <div className="bg-primary text-black p-4 lg:p-8 rounded-2xl w-full h-fit flex flex-col justify-between items-start gap-64 lg:w-4/6 lg:h-full">
+          <h1 className="text-6xl lg:text-7xl font-extrabold uppercase">
             Prêt à faire de votre vision une réalité ?
           </h1>
-          <div className="flex flex-col gap-2 w-full">
+          <div className="flex flex-col gap-2 lg:gap-4 w-full lg:flex-row">
             <Top>
               <ButtonLink
                 className="!w-full text-center"
@@ -21,7 +21,7 @@ function Hero() {
                 contact@floriansimunek.com
               </ButtonLink>
             </Top>
-            <Bottom className="flex gap-2">
+            <Bottom className="flex gap-2 lg:gap-4">
               <ButtonLink
                 className="!w-full text-center"
                 to="https://www.linkedin.com/in/simunek-florian/"
@@ -41,7 +41,7 @@ function Hero() {
             </Bottom>
           </div>
         </div>
-        <div className="bg-white rounded-2xl overflow-hidden relative w-full min-h-96">
+        <div className="bg-white rounded-2xl overflow-hidden relative w-full min-h-96 lg:w-2/6">
           <img
             src={profilePicture}
             alt="Photo de profil"
@@ -59,22 +59,28 @@ function Hero() {
           </div>
         </div>
       </Top>
-      <Bottom className="flex flex-col gap-2">
-        <div className="stats flex gap-2">
+      <Bottom className="flex flex-col gap-2 lg:gap-4 lg:flex-row lg:h-1/4">
+        <div className="stats flex gap-2 lg:gap-4 lg:w-full">
           <Stat>
-            +140{' '}
-            <span className="font-bold text-xl md:text-2xl">commandes</span>
+            +140
+            <span className="font-bold text-xl md:text-2xl lg:text-3xl">
+              commandes
+            </span>
           </Stat>
           <Stat>
-            100%{' '}
-            <span className="font-bold text-xl md:text-2xl">avis positifs</span>
+            100%
+            <span className="font-bold text-xl md:text-2xl lg:text-3xl">
+              avis positifs
+            </span>
           </Stat>
-          <Stat className="hidden">
-            100%{' '}
-            <span className="font-bold text-xl md:text-2xl">complétion</span>
+          <Stat className="hidden lg:flex">
+            100%
+            <span className="font-bold text-xl md:text-2xl lg:text-3xl">
+              complétion
+            </span>
           </Stat>
         </div>
-        <CTA />
+        <CTA className="lg:w-full" />
       </Bottom>
     </Container>
   );
@@ -82,7 +88,7 @@ function Hero() {
 
 function Container({ children, className, ...props }) {
   return (
-    <main className={`${className} w-svw h-fit p-2`} {...props}>
+    <main className={`${className} w-full h-fit lg:h-svh p-2`} {...props}>
       {children}
     </main>
   );
@@ -131,7 +137,7 @@ function TextBanner({ bordered }) {
 function Stat({ className, children }) {
   return (
     <h3
-      className={`${className} bg-white text-black rounded-2xl w-full min-h-32 flex flex-col justify-center items-center uppercase font-extrabold text-2xl md:text-4xl`}
+      className={`${className} bg-white text-black rounded-2xl w-full min-h-32 flex flex-col justify-center items-center uppercase font-extrabold text-2xl md:text-4xl lg:text-5xl`}
     >
       {children}
     </h3>
