@@ -12,6 +12,11 @@ function getTime() {
   return hours + ':' + minutes;
 }
 
+function scrollToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
 function Footer() {
   return (
     <footer className="bg-white w-full min-h-svh rounded-4xl p-8 flex flex-col justify-between items-center gap-16">
@@ -141,13 +146,13 @@ function Footer() {
           </ul>
         </nav>
       </div>
-      <div className="bottom w-full flex gap-2 justify-center items-end">
+      <div className="bottom w-full flex justify-center items-end">
         <div className="left w-full flex flex-col gap-4">
-          <p className="flex flex-col text-3xl font-bold">
+          <p className="flex flex-col text-2xl font-bold">
             &copy; {new Date().getFullYear()}
             <span className="uppercase">Florian SIMUNEK</span>
           </p>
-          <p className="flex flex-col font-bold text-2xl">
+          <p className="flex flex-col font-bold text-xl">
             LOCAL TIME <span>{getTime()} UTC+1</span>
           </p>
         </div>
@@ -159,6 +164,7 @@ function Footer() {
             strokeWidth={3}
             stroke="#FFF"
             className="w-16 h-16 -rotate-90 bg-black rounded-full p-4"
+            onClick={scrollToTop}
           >
             <path
               strokeLinecap="round"
