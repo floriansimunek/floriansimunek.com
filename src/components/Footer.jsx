@@ -19,7 +19,10 @@ function scrollToTop() {
 
 function Footer() {
   return (
-    <footer className="bg-white w-full min-h-svh rounded-4xl p-8 lg:p-16 flex flex-col justify-between items-center gap-16 lg:gap-32">
+    <footer
+      id="footer"
+      className="bg-white w-full min-h-svh rounded-4xl p-8 lg:p-16 flex flex-col justify-between items-center gap-16 lg:gap-32"
+    >
       <div className="top text-center flex flex-col gap-4 w-full">
         <h4 className="uppercase text-2xl md:text-3xl lg:text-4xl font-bold">
           un projet ? construisons le ensemble !
@@ -151,7 +154,7 @@ function Footer() {
       <div className="bottom w-full flex justify-center items-end">
         <div className="left w-full flex flex-col gap-4 lg:gap-32 lg:flex-row lg:items-end">
           <p className="flex flex-col text-2xl lg:text-5xl font-bold">
-            &copy; {new Date().getFullYear()}
+            &copy; 2021 - {new Date().getFullYear()}
             <span className="uppercase">Florian SIMUNEK</span>
           </p>
           <p className="flex flex-col font-bold text-xl lg:text-2xl">
@@ -164,8 +167,8 @@ function Footer() {
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={3}
-            stroke="#FFF"
-            className="w-16 h-16 -rotate-90 bg-black rounded-full p-4"
+            stroke="currentColor"
+            className="w-12 h-12 -rotate-90 lg:w-16 lg:h-16 cursor-pointer"
             onClick={scrollToTop}
           >
             <path
