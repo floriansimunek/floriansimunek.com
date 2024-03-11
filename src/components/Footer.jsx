@@ -23,7 +23,7 @@ function Footer() {
         <h4 className="uppercase text-2xl md:text-3xl lg:text-4xl font-bold">
           un projet ? construisons le ensemble !
         </h4>
-        <CTA className="lg:w-2/4 mx-auto lg:mt-8" />
+        <CTA className="lg:w-2/4 mx-auto lg:mt-8" dark />
       </div>
       <div className="middle w-full">
         <nav className="w-full flex flex-col justify-center items-center gap-8 lg:gap-16 lg:flex-row lg:items-start">
