@@ -2,13 +2,17 @@ function ButtonLink({ children, to, className, primary = false, ...props }) {
   return (
     <a
       href={to}
-      className={`${className} ${
-        primary ? 'bg-primary' : 'bg-white'
-      } group flex justify-center items-center relative w-fit text-base uppercase md:text-lg lg:text-2xl font-bold text-black hover:text-primary cursor-pointer py-2 px-8 border-4 border-solid border-black rounded-full transition-all overflow-hidden`}
+      className={`${className} ${primary ? 'bg-primary' : 'bg-white'}
+      group relative flex w-fit cursor-pointer items-center justify-center
+      overflow-hidden rounded-full border-4 border-solid border-black px-8
+      py-2 text-base font-bold uppercase text-black transition-all hover:text-primary md:text-lg lg:text-2xl`}
       {...props}
     >
-      <span className="z-50 relative">{children}</span>
-      <span className="bg-black absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 rounded-full w-full h-full scale-0 group-hover:scale-125 transition-all"></span>
+      <span className="relative z-50">{children}</span>
+      <span
+        className="absolute left-2/4 top-2/4 h-full w-full -translate-x-2/4 -translate-y-2/4
+        scale-0 rounded-full bg-black transition-all group-hover:scale-125"
+      ></span>
     </a>
   );
 }
