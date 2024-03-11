@@ -23,7 +23,7 @@ function Hero() {
             </Top>
             <Bottom className="flex gap-2 lg:gap-4">
               <ButtonLink
-                className="!w-full text-center"
+                className="w-full sm:w-fit text-center"
                 to="https://www.linkedin.com/in/simunek-florian/"
                 target="_blank"
                 rel="noreferrer"
@@ -31,7 +31,7 @@ function Hero() {
                 LinkedIn
               </ButtonLink>
               <ButtonLink
-                className="!w-full text-center"
+                className="w-full sm:w-fit text-center"
                 to="https://bento.me/florian-simunek"
                 target="_blank"
                 rel="noreferrer"

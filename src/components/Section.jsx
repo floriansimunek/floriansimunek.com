@@ -23,12 +23,8 @@ function Section({ title, primary, id, to }) {
             primary ? 'items-start' : 'items-end'
           }`}
         >
-          <ButtonLink className={`${primary ? '!bg-primary' : ''} uppercase`}>
-            Demander un devis
-          </ButtonLink>
-          <ButtonLink className={`${primary ? '!bg-primary' : ''} uppercase`}>
-            En savoir plus
-          </ButtonLink>
+          <ButtonLink primary={primary}>Demander un devis</ButtonLink>
+          <ButtonLink primary={primary}>En savoir plus</ButtonLink>
         </div>
       </div>
     </div>

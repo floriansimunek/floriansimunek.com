@@ -31,7 +31,7 @@ function CTA({ className, dark = false }) {
       <span
         className={`${
           dark ? 'bg-black' : 'bg-white'
-        } absolute top-2/4 left-0 right-0 -translate-y-2/4  h-0 group-hover:h-full transition-all`}
+        } absolute top-2/4 left-0 right-0 -translate-y-2/4 h-0 group-hover:h-full transition-all`}
       ></span>
     </a>
   );
