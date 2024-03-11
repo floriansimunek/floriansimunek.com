@@ -1,3 +1,4 @@
+import { HashLink } from 'react-router-hash-link';
 import ArrowLink from './ArrowLink';
 import CTA from './CTA';
 
@@ -23,128 +24,84 @@ function Footer() {
         <h4 className="uppercase text-2xl md:text-3xl lg:text-4xl font-bold">
           un projet ? construisons le ensemble !
         </h4>
-        <CTA className="lg:w-2/4 mx-auto lg:mt-8" dark />
+        <CTA className="lg:w-2/4 mx-auto" dark />
       </div>
       <div className="middle w-full">
         <nav className="w-full flex flex-col justify-center items-center gap-8 lg:gap-16 lg:flex-row lg:items-start">
-          <ul className="w-full flex flex-col gap-2">
-            <li className="uppercase mb-2 font-bold text-2xl md:text-3xl w-full border-b-4 border-black">
-              Navigation
-            </li>
-            <li>
-              <a href="#website-creation" className="text-lg md:text-2xl">
-                Créez votre site web
-              </a>
-            </li>
-            <li>
-              <a href="#react-app-creation" className="text-lg md:text-2xl">
-                Créez votre application React
-              </a>
-            </li>
-            <li>
-              <a href="#html-css-integration" className="text-lg md:text-2xl">
-                Intégration HTML & CSS
-              </a>
-            </li>
-            <li>
-              <a
-                href="#upgrade-repair-optimize"
-                className="text-lg md:text-2xl"
-              >
-                Améliorez, réparez ou optimisez votre site
-              </a>
-            </li>
-            <li>
-              <a href="#model-creation" className="text-lg md:text-2xl">
-                Créez la maquette de votre site web
-              </a>
-            </li>
-            <li>
-              <a href="#learn-to-create" className="text-lg md:text-2xl">
-                Créez votre site web par vous-même
-              </a>
-            </li>
-          </ul>
-          <ul className="w-full flex flex-col gap-2 lg:w-1/4">
-            <li className="uppercase mb-2 font-bold text-2xl md:text-3xl w-full border-b-4 border-black">
-              Réseaux
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/simunek-florian/"
-                className="text-lg md:text-2xl"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/floriansimunek"
-                className="text-lg md:text-2xl"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://comeup.com/fr/@florian-s"
-                className="text-lg md:text-2xl"
-                target="_blank"
-                rel="noreferrer"
-              >
-                ComeUp
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.malt.fr/profile/floriansimunek"
-                className="text-lg md:text-2xl"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Malt
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.codeur.com/-florian_s"
-                className="text-lg md:text-2xl"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Codeur
-              </a>
-            </li>
-          </ul>
-          <ul className="w-full flex flex-col gap-2 lg:w-1/4">
-            <li className="uppercase mb-2 font-bold text-2xl md:text-3xl w-full border-b-4 border-black">
-              Liens utiles
-            </li>
-            <li>
-              <a
-                href="https://bento.me/florian-simunek"
-                className="text-lg md:text-2xl"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Bento
-              </a>
-            </li>
-            <li>
-              <a
-                href="mailto:contact@floriansimunek.com"
-                className="text-lg md:text-2xl"
-                target="_blank"
-                rel="noreferrer"
-              >
-                contact@floriansimunek.com
-              </a>
-            </li>
-          </ul>
+          <List wide>
+            <ListTitle>Navigation</ListTitle>
+            <ListItem to="website-creation">Créez votre site web</ListItem>
+            <ListItem to="react-app-creation">
+              Créez votre application React
+            </ListItem>
+            <ListItem to="html-css-integration">
+              Intégration HTML & CSS
+            </ListItem>
+            <ListItem to="upgrade-repair-optimize">
+              Améliorez, réparez ou optimisez votre site
+            </ListItem>
+            <ListItem to="model-creation">
+              Créez la maquette de votre site web
+            </ListItem>
+            <ListItem to="learn-to-create">
+              Créez votre site web par vous-même
+            </ListItem>
+          </List>
+          <List>
+            <ListTitle>Réseaux</ListTitle>
+            <ListItem
+              to="https://www.linkedin.com/in/simunek-florian/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </ListItem>
+            <ListItem
+              to="https://github.com/floriansimunek"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </ListItem>
+            <ListItem
+              to="https://comeup.com/fr/@florian-s"
+              target="_blank"
+              rel="noreferrer"
+            >
+              ComeUp
+            </ListItem>
+            <ListItem
+              to="https://www.malt.fr/profile/floriansimunek"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Malt
+            </ListItem>
+            <ListItem
+              to="https://www.codeur.com/-florian_s"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Codeur
+            </ListItem>
+          </List>
+          <List>
+            <ListTitle>Liens utiles</ListTitle>
+            <ListItem
+              to="https://bento.me/florian-simunek"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Bento
+            </ListItem>
+            <ListItem
+              to="mailto:contact@floriansimunek.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              contact@floriansimunek.com
+            </ListItem>
+          </List>
         </nav>
       </div>
       <div className="bottom w-full flex justify-center items-end">
@@ -162,6 +119,54 @@ function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function List({ children, wide = false }) {
+  return (
+    <ul
+      className={`w-full flex flex-col gap-2 md:gap-0 ${
+        !wide ? 'lg:w-1/2' : 'w-full'
+      }`}
+    >
+      {children}
+    </ul>
+  );
+}
+
+function ListTitle({ children }) {
+  return (
+    <li className="uppercase mb-2 font-bold text-2xl md:text-3xl w-full border-b-4 border-black">
+      {children}
+    </li>
+  );
+}
+
+function ListItem({ children, to, ...props }) {
+  return (
+    <li>
+      <HashLink
+        to={props.target ? to : `/#` + to}
+        className="flex justify-between items-center group relative text-lg md:text-2xl md:px-4 md:py-4 hover:bg-primary hover:font-semibold rounded-md transition-all"
+        smooth
+        {...props}
+      >
+        {children}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={3}
+          className={`hidden md:block md:w-8 md:h-8 stroke-black -translate-x-16 group-hover:translate-x-0 scale-0 group-hover:scale-100 transition-all`}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+          />
+        </svg>
+      </HashLink>
+    </li>
   );
 }
 
