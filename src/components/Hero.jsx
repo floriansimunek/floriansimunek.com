@@ -6,8 +6,8 @@ function Hero() {
   return (
     <Container className="flex flex-col gap-2 lg:gap-4">
       <Top className="flex flex-col gap-2 lg:gap-4 md:flex-row lg:h-3/4">
-        <div className="bg-primary text-black p-4 lg:p-8 rounded-2xl w-full h-fit flex flex-col justify-between items-start gap-64 lg:w-4/6 lg:h-full">
-          <h1 className="text-6xl lg:text-7xl font-extrabold uppercase">
+        <div className="bg-primary text-black p-4 lg:p-8 rounded-2xl w-full h-fit flex flex-col justify-between items-start gap-64 sm:gap-32 lg:gap-0 lg:w-4/6 lg:h-full">
+          <h1 className="text-6xl lg:text-8xl font-extrabold uppercase">
             Prêt à faire de votre vision une réalité ?
           </h1>
           <div className="flex flex-col gap-2 lg:gap-4 w-full lg:flex-row">
@@ -41,7 +41,7 @@ function Hero() {
             </Bottom>
           </div>
         </div>
-        <div className="bg-white rounded-2xl overflow-hidden relative w-full min-h-96 lg:w-2/6">
+        <div className="bg-white rounded-2xl overflow-hidden relative w-full min-h-96 sm:min-h-0 lg:w-2/6">
           <img
             src={profilePicture}
             alt="Photo de profil"
