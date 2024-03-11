@@ -20,11 +20,14 @@ function Footer() {
       id="footer"
       className="bg-white w-full min-h-svh rounded-4xl px-4 py-8 lg:p-16 flex flex-col justify-between items-center gap-16 lg:gap-32"
     >
-      <div className="w-full text-center flex flex-col gap-4">
-        <h4 className="uppercase text-2xl md:text-3xl lg:text-4xl font-bold">
+      <div className="w-full text-center flex flex-col">
+        <h4 className="uppercase text-base md:text-3xl lg:text-4xl font-bold">
           un projet ? construisons le ensemble !
         </h4>
-        <CTA className="w-full lg:w-2/4 md:mx-auto" dark />
+        <h3 className="uppercase text-3xl md:text-6xl lg:text-8xl font-extrabold mt-2">
+          Entrons en contact
+        </h3>
+        <CTA className="w-full lg:w-2/4 md:mx-auto mt-8" dark />
       </div>
       <Menu>
         <List wide>
