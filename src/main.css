@@ -13,12 +13,46 @@ body {
   overflow-x: hidden;
 }
 
+/* TEXT INFINITE BANNER */
+
 .text-wrapper .text-banner {
-  animation: infiniteBanner 10s linear infinite;
+  animation: infiniteBanner linear infinite;
 }
 
 .text-wrapper:nth-child(odd) .text-banner {
-  animation: infiniteBanner 10s linear infinite reverse;
+  animation: infiniteBanner linear infinite reverse;
+}
+
+.text-wrapper:nth-child(1) .text-banner {
+  animation-duration: 10s;
+}
+
+.text-wrapper:nth-child(2) .text-banner {
+  animation-duration: 15s;
+}
+
+.text-wrapper:nth-child(3) .text-banner {
+  animation-duration: 20s;
+}
+
+.text-wrapper:nth-child(4) .text-banner {
+  animation-duration: 25s;
+}
+
+.text-wrapper:nth-child(5) .text-banner {
+  animation-duration: 30s;
+}
+
+.text-wrapper:nth-child(6) .text-banner {
+  animation-duration: 35s;
+}
+
+.text-wrapper:nth-child(7) .text-banner {
+  animation-duration: 40s;
+}
+
+.text-wrapper:nth-child(8) .text-banner {
+  animation-duration: 45s;
 }
 
 @keyframes infiniteBanner {
@@ -31,6 +65,7 @@ body {
   }
 }
 
+/**/
 .rounded-4xl {
   border-radius: 32px;
 }
