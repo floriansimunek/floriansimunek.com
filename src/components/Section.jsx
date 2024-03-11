@@ -1,6 +1,6 @@
 import ButtonLink from './ButtonLink';
 
-function Section({ title, primary, id }) {
+function Section({ title, primary, id, to }) {
   return (
     <div
       className={`${
@@ -16,14 +16,14 @@ function Section({ title, primary, id }) {
           primary ? 'flex-row-reverse' : ''
         }`}
       >
-        <div className="left">
+        <a href={'#' + to} className="left">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={3}
             stroke="currentColor"
-            className="w-12 h-12 rotate-90 lg:w-16 lg:h-16"
+            className="w-12 h-12 rotate-90 lg:w-16 lg:h-16 cursor-pointer"
           >
             <path
               strokeLinecap="round"
@@ -31,7 +31,7 @@ function Section({ title, primary, id }) {
               d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
             />
           </svg>
-        </div>
+        </a>
         <div
           className={`right flex flex-col gap-2 justify-center ${
             primary ? 'items-start' : 'items-end'
