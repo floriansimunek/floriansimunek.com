@@ -18,16 +18,16 @@ function Footer() {
   return (
     <footer
       id="footer"
-      className="bg-white w-full min-h-svh rounded-4xl px-4 py-8 lg:p-16 flex flex-col justify-between items-center gap-16 lg:gap-32"
+      className="rounded-4xl flex min-h-svh w-full flex-col items-center justify-between gap-16 bg-white px-4 py-8 lg:gap-32 lg:p-16"
     >
-      <div className="w-full text-center flex flex-col">
-        <h4 className="uppercase text-base md:text-3xl lg:text-4xl font-bold">
+      <div className="flex w-full flex-col text-center">
+        <h4 className="text-base font-bold uppercase md:text-3xl lg:text-4xl">
           un projet ? construisons le ensemble !
         </h4>
-        <h3 className="uppercase text-3xl md:text-6xl lg:text-8xl font-extrabold mt-2">
+        <h3 className="mt-2 text-3xl font-extrabold uppercase md:text-6xl lg:text-8xl">
           Entrons en contact
         </h3>
-        <CTA className="w-full lg:w-2/4 md:mx-auto mt-8" dark />
+        <CTA className="mt-8 w-full md:mx-auto lg:w-2/4" dark />
       </div>
       <Menu>
         <List wide>
@@ -103,8 +103,8 @@ function Footer() {
           </ListItem>
         </List>
       </Menu>
-      <div className="w-full flex justify-center items-end">
-        <div className="w-full flex flex-col gap-4 lg:gap-32 lg:flex-row lg:items-end">
+      <div className="flex w-full items-end justify-center">
+        <div className="flex w-full flex-col gap-4 lg:flex-row lg:items-end lg:gap-32">
           <Copyright />
           <Time />
         </div>
@@ -116,7 +116,7 @@ function Footer() {
 
 function Menu({ children }) {
   return (
-    <nav className="w-full flex flex-col justify-center items-center gap-8 lg:gap-16 lg:flex-row lg:items-start">
+    <nav className="flex w-full flex-col items-center justify-center gap-8 lg:flex-row lg:items-start lg:gap-16">
       {children}
     </nav>
   );
@@ -124,7 +124,7 @@ function Menu({ children }) {
 
 function List({ children, wide = false }) {
   return (
-    <ul className={`w-full flex flex-col ${!wide ? 'lg:w-1/2' : 'w-full'}`}>
+    <ul className={`flex w-full flex-col ${!wide ? 'lg:w-1/2' : 'w-full'}`}>
       {children}
     </ul>
   );
@@ -132,7 +132,7 @@ function List({ children, wide = false }) {
 
 function ListTitle({ children }) {
   return (
-    <li className="uppercase mb-2 font-bold text-2xl md:text-3xl w-full border-b-4 border-black">
+    <li className="mb-2 w-full border-b-4 border-black text-2xl font-bold uppercase md:text-3xl">
       {children}
     </li>
   );
@@ -143,7 +143,7 @@ function ListItem({ children, to, ...props }) {
     <li>
       <HashLink
         to={props.target ? to : `/#` + to}
-        className="flex justify-between items-center group relative text-lg md:text-2xl md:px-4 py-2 md:py-4 hover:md:bg-primary hover:md:font-semibold rounded-md transition-all"
+        className="group relative flex items-center justify-between rounded-md py-2 text-lg transition-all md:px-4 md:py-4 md:text-2xl hover:md:bg-primary hover:md:font-semibold"
         smooth
         {...props}
       >
@@ -153,7 +153,7 @@ function ListItem({ children, to, ...props }) {
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={3}
-          className={`hidden md:block md:w-8 md:h-8 stroke-black -translate-x-16 group-hover:translate-x-0 scale-0 group-hover:scale-100 transition-all`}
+          className={`hidden -translate-x-16 scale-0 stroke-black transition-all group-hover:translate-x-0 group-hover:scale-100 md:block md:h-8 md:w-8`}
         >
           <path
             strokeLinecap="round"
@@ -168,7 +168,7 @@ function ListItem({ children, to, ...props }) {
 
 function Copyright() {
   return (
-    <p className="flex flex-col text-2xl lg:text-5xl font-bold">
+    <p className="flex flex-col text-2xl font-bold lg:text-5xl">
       &copy; 2021 - {new Date().getFullYear()}
       <span className="uppercase">Florian SIMUNEK</span>
     </p>
@@ -177,7 +177,7 @@ function Copyright() {
 
 function Time() {
   return (
-    <p className="flex flex-col font-bold text-xl lg:text-2xl">
+    <p className="flex flex-col text-xl font-bold lg:text-2xl">
       LOCAL TIME <span>{getTime()} UTC+1</span>
     </p>
   );
