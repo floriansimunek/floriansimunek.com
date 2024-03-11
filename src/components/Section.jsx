@@ -17,14 +17,17 @@ function Section({ title, primary, id, to }) {
           primary ? 'flex-row-reverse' : ''
         }`}
       >
-        <HashLink to={'#' + to} className="left" smooth>
+        <HashLink
+          to={'#' + to}
+          className="left group relative rounded-full cursor-pointer overflow-hidden w-16 h-16 lg:w-20 lg:h-20"
+          smooth
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={3}
-            stroke="currentColor"
-            className="w-12 h-12 rotate-90 lg:w-16 lg:h-16 cursor-pointer"
+            className="w-3/4 h-3/4 rotate-90 stroke-black group-hover:stroke-primary transition-all top-2/4 left-2/4 absolute z-50 -translate-y-2/4 -translate-x-2/4"
           >
             <path
               strokeLinecap="round"
@@ -32,6 +35,7 @@ function Section({ title, primary, id, to }) {
               d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
             />
           </svg>
+          <span className="bg-black rounded-full absolute top-0 left-0 bottom-0 right-0 scale-0 group-hover:scale-100 transition-all"></span>
         </HashLink>
         <div
           className={`right flex flex-col gap-2 justify-center ${
