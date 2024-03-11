@@ -1,5 +1,5 @@
+import ArrowLink from './ArrowLink';
 import CTA from './CTA';
-import { HashLink } from 'react-router-hash-link';
 
 function getTime() {
   const date = new Date();
@@ -158,22 +158,7 @@ function Footer() {
           </p>
         </div>
         <div className="right">
-          <HashLink to="#hero" smooth>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={3}
-              stroke="currentColor"
-              className="w-12 h-12 -rotate-90 lg:w-16 lg:h-16 cursor-pointer"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-              />
-            </svg>
-          </HashLink>
+          <ArrowLink to="hero" up />
         </div>
       </div>
     </footer>
