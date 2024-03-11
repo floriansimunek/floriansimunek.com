@@ -1,3 +1,4 @@
+import { HashLink } from 'react-router-hash-link';
 import ButtonLink from './ButtonLink';
 
 function Section({ title, primary, id, to }) {
@@ -16,7 +17,7 @@ function Section({ title, primary, id, to }) {
           primary ? 'flex-row-reverse' : ''
         }`}
       >
-        <a href={'#' + to} className="left">
+        <HashLink to={'#' + to} className="left" smooth>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -31,7 +32,7 @@ function Section({ title, primary, id, to }) {
               d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
             />
           </svg>
-        </a>
+        </HashLink>
         <div
           className={`right flex flex-col gap-2 justify-center ${
             primary ? 'items-start' : 'items-end'

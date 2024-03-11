@@ -4,7 +4,7 @@ import CTA from './CTA';
 
 function Hero() {
   return (
-    <Container className="flex flex-col gap-2 lg:gap-4">
+    <Container className="flex flex-col gap-2 lg:gap-4" id="hero">
       <Top className="flex flex-col gap-2 lg:gap-4 md:flex-row lg:h-3/4">
         <div className="bg-primary text-black p-4 lg:p-8 rounded-2xl w-full h-fit flex flex-col justify-between items-start gap-64 sm:gap-32 lg:gap-0 lg:w-4/6 lg:h-full">
           <h1 className="text-6xl lg:text-8xl font-extrabold uppercase">

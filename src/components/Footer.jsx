@@ -1,4 +1,5 @@
 import CTA from './CTA';
+import { HashLink } from 'react-router-hash-link';
 
 function getTime() {
   const date = new Date();
@@ -10,11 +11,6 @@ function getTime() {
   const minutes =
     paris.getMinutes() <= 9 ? '0' + paris.getMinutes() : paris.getMinutes();
   return hours + ':' + minutes;
-}
-
-function scrollToTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
 }
 
 function Footer() {
@@ -162,21 +158,22 @@ function Footer() {
           </p>
         </div>
         <div className="right">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={3}
-            stroke="currentColor"
-            className="w-12 h-12 -rotate-90 lg:w-16 lg:h-16 cursor-pointer"
-            onClick={scrollToTop}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-            />
-          </svg>
+          <HashLink to="#hero" smooth>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={3}
+              stroke="currentColor"
+              className="w-12 h-12 -rotate-90 lg:w-16 lg:h-16 cursor-pointer"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+              />
+            </svg>
+          </HashLink>
         </div>
       </div>
     </footer>
