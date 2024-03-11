@@ -121,11 +121,7 @@ function Menu({ children }) {
 
 function List({ children, wide = false }) {
   return (
-    <ul
-      className={`w-full flex flex-col gap-2 md:gap-0 ${
-        !wide ? 'lg:w-1/2' : 'w-full'
-      }`}
-    >
+    <ul className={`w-full flex flex-col ${!wide ? 'lg:w-1/2' : 'w-full'}`}>
       {children}
     </ul>
   );
@@ -144,7 +140,7 @@ function ListItem({ children, to, ...props }) {
     <li>
       <HashLink
         to={props.target ? to : `/#` + to}
-        className="flex justify-between items-center group relative text-lg md:text-2xl md:px-4 md:py-4 hover:md:bg-primary hover:md:font-semibold rounded-md transition-all"
+        className="flex justify-between items-center group relative text-lg md:text-2xl md:px-4 py-2 md:py-4 hover:md:bg-primary hover:md:font-semibold rounded-md transition-all"
         smooth
         {...props}
       >
