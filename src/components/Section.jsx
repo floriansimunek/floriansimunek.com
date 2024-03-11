@@ -1,13 +1,10 @@
-import ButtonLink from './ButtonLink';
 import ArrowLink from './ArrowLink';
+import ButtonLink from './ButtonLink';
+import Container from './Container';
 
 function Section({ title, primary, id, to }) {
   return (
-    <div
-      className={`${primary ? 'bg-primary' : 'bg-white'}
-      rounded-4xl flex min-h-svh w-full flex-col items-start justify-between p-8 lg:p-16`}
-      id={id}
-    >
+    <Container primary={primary} id={id}>
       <Title>{title}</Title>
       <div
         className={`flex w-full items-center justify-between
@@ -22,7 +19,7 @@ function Section({ title, primary, id, to }) {
           <ButtonLink primary={primary}>En savoir plus</ButtonLink>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }
 

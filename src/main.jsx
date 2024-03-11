@@ -1,7 +1,6 @@
 import App from '@components/App.jsx';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
 import Lenis from '@studio-freight/lenis';
 import './main.css';
 
@@ -16,8 +15,6 @@ requestAnimationFrame(raf);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <App />
   </React.StrictMode>,
 );
