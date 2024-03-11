@@ -18,107 +18,104 @@ function Footer() {
   return (
     <footer
       id="footer"
-      className="bg-white w-full min-h-svh rounded-4xl p-8 lg:p-16 flex flex-col justify-between items-center gap-16 lg:gap-32"
+      className="bg-white w-full min-h-svh rounded-4xl px-4 py-8 lg:p-16 flex flex-col justify-between items-center gap-16 lg:gap-32"
     >
-      <div className="top text-center flex flex-col gap-4 w-full">
+      <div className="w-full text-center flex flex-col gap-4">
         <h4 className="uppercase text-2xl md:text-3xl lg:text-4xl font-bold">
           un projet ? construisons le ensemble !
         </h4>
-        <CTA className="lg:w-2/4 mx-auto" dark />
+        <CTA className="w-full lg:w-2/4 md:mx-auto" dark />
       </div>
-      <div className="middle w-full">
-        <nav className="w-full flex flex-col justify-center items-center gap-8 lg:gap-16 lg:flex-row lg:items-start">
-          <List wide>
-            <ListTitle>Navigation</ListTitle>
-            <ListItem to="website-creation">Créez votre site web</ListItem>
-            <ListItem to="react-app-creation">
-              Créez votre application React
-            </ListItem>
-            <ListItem to="html-css-integration">
-              Intégration HTML & CSS
-            </ListItem>
-            <ListItem to="upgrade-repair-optimize">
-              Améliorez, réparez ou optimisez votre site
-            </ListItem>
-            <ListItem to="model-creation">
-              Créez la maquette de votre site web
-            </ListItem>
-            <ListItem to="learn-to-create">
-              Créez votre site web par vous-même
-            </ListItem>
-          </List>
-          <List>
-            <ListTitle>Réseaux</ListTitle>
-            <ListItem
-              to="https://www.linkedin.com/in/simunek-florian/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn
-            </ListItem>
-            <ListItem
-              to="https://github.com/floriansimunek"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-            </ListItem>
-            <ListItem
-              to="https://comeup.com/fr/@florian-s"
-              target="_blank"
-              rel="noreferrer"
-            >
-              ComeUp
-            </ListItem>
-            <ListItem
-              to="https://www.malt.fr/profile/floriansimunek"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Malt
-            </ListItem>
-            <ListItem
-              to="https://www.codeur.com/-florian_s"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Codeur
-            </ListItem>
-          </List>
-          <List>
-            <ListTitle>Liens utiles</ListTitle>
-            <ListItem
-              to="https://bento.me/florian-simunek"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Bento
-            </ListItem>
-            <ListItem
-              to="mailto:contact@floriansimunek.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              contact@floriansimunek.com
-            </ListItem>
-          </List>
-        </nav>
-      </div>
-      <div className="bottom w-full flex justify-center items-end">
-        <div className="left w-full flex flex-col gap-4 lg:gap-32 lg:flex-row lg:items-end">
-          <p className="flex flex-col text-2xl lg:text-5xl font-bold">
-            &copy; 2021 - {new Date().getFullYear()}
-            <span className="uppercase">Florian SIMUNEK</span>
-          </p>
-          <p className="flex flex-col font-bold text-xl lg:text-2xl">
-            LOCAL TIME <span>{getTime()} UTC+1</span>
-          </p>
+      <Menu>
+        <List wide>
+          <ListTitle>Navigation</ListTitle>
+          <ListItem to="website-creation">Créez votre site web</ListItem>
+          <ListItem to="react-app-creation">
+            Créez votre application React
+          </ListItem>
+          <ListItem to="html-css-integration">Intégration HTML & CSS</ListItem>
+          <ListItem to="upgrade-repair-optimize">
+            Améliorez, réparez ou optimisez votre site
+          </ListItem>
+          <ListItem to="model-creation">
+            Créez la maquette de votre site web
+          </ListItem>
+          <ListItem to="learn-to-create">
+            Créez votre site web par vous-même
+          </ListItem>
+        </List>
+        <List>
+          <ListTitle>Réseaux</ListTitle>
+          <ListItem
+            to="https://www.linkedin.com/in/simunek-florian/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </ListItem>
+          <ListItem
+            to="https://github.com/floriansimunek"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </ListItem>
+          <ListItem
+            to="https://comeup.com/fr/@florian-s"
+            target="_blank"
+            rel="noreferrer"
+          >
+            ComeUp
+          </ListItem>
+          <ListItem
+            to="https://www.malt.fr/profile/floriansimunek"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Malt
+          </ListItem>
+          <ListItem
+            to="https://www.codeur.com/-florian_s"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Codeur
+          </ListItem>
+        </List>
+        <List>
+          <ListTitle>Liens utiles</ListTitle>
+          <ListItem
+            to="https://bento.me/florian-simunek"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Bento
+          </ListItem>
+          <ListItem
+            to="mailto:contact@floriansimunek.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            contact@floriansimunek.com
+          </ListItem>
+        </List>
+      </Menu>
+      <div className="w-full flex justify-center items-end">
+        <div className="w-full flex flex-col gap-4 lg:gap-32 lg:flex-row lg:items-end">
+          <Copyright />
+          <Time />
         </div>
-        <div className="right">
-          <ArrowLink to="hero" up />
-        </div>
+        <ArrowLink to="hero" up />
       </div>
     </footer>
+  );
+}
+
+function Menu({ children }) {
+  return (
+    <nav className="w-full flex flex-col justify-center items-center gap-8 lg:gap-16 lg:flex-row lg:items-start">
+      {children}
+    </nav>
   );
 }
 
@@ -147,7 +144,7 @@ function ListItem({ children, to, ...props }) {
     <li>
       <HashLink
         to={props.target ? to : `/#` + to}
-        className="flex justify-between items-center group relative text-lg md:text-2xl md:px-4 md:py-4 hover:bg-primary hover:font-semibold rounded-md transition-all"
+        className="flex justify-between items-center group relative text-lg md:text-2xl md:px-4 md:py-4 hover:md:bg-primary hover:md:font-semibold rounded-md transition-all"
         smooth
         {...props}
       >
@@ -167,6 +164,23 @@ function ListItem({ children, to, ...props }) {
         </svg>
       </HashLink>
     </li>
+  );
+}
+
+function Copyright() {
+  return (
+    <p className="flex flex-col text-2xl lg:text-5xl font-bold">
+      &copy; 2021 - {new Date().getFullYear()}
+      <span className="uppercase">Florian SIMUNEK</span>
+    </p>
+  );
+}
+
+function Time() {
+  return (
+    <p className="flex flex-col font-bold text-xl lg:text-2xl">
+      LOCAL TIME <span>{getTime()} UTC+1</span>
+    </p>
   );
 }
 
