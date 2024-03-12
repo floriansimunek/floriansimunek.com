@@ -1,10 +1,12 @@
 import Hero from '@components/Hero';
 import Section from '@components/Section';
 import Reviews from '@components/Reviews';
+import ContactModal from '../components/ContactModal';
 
 function Home() {
   return (
     <>
+      <ContactModal></ContactModal>
       <Hero />
       <Section
         title="Créez votre site web"

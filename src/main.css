@@ -69,3 +69,15 @@ body {
 .rounded-4xl {
   border-radius: 32px;
 }
+
+.dialog {
+  z-index: 999;
+}
+
+.dialog-inner {
+  z-index: 9999;
+}
+
+.close {
+  z-index: 99999;
+}
