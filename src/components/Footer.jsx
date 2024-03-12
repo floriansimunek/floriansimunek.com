@@ -160,7 +160,7 @@ function ListItem({ children, to, ...props }) {
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={3}
-          className={`hidden -translate-x-16 scale-0 stroke-black transition-all group-hover:translate-x-0 group-hover:scale-100 md:block md:h-8 md:w-8`}
+          className={`${props.target ? '-rotate-45' : ''} hidden -translate-x-16 scale-0 stroke-black transition-all group-hover:translate-x-0 group-hover:scale-100 md:block md:h-8 md:w-8`}
         >
           <path
             strokeLinecap="round"
