@@ -8,7 +8,7 @@ const validateField = (value, minLength, errorMessage) => {
   return null;
 };
 
-function ContactModal({ title = 'DEFAULT' }) {
+function ContactModal({ title = 'DEFAULT', isOpen = false, closeModal }) {
   const form = useRef();
 
   const [email, setEmail] = useState('');
@@ -91,14 +91,17 @@ function ContactModal({ title = 'DEFAULT' }) {
   };
 
   return (
-    <div className="dialog fixed h-screen w-screen bg-black bg-opacity-80">
-      <div className="dialog-inner absolute bottom-8 left-2/4 w-11/12 -translate-x-2/4 rounded-2xl border-4 border-black bg-primary p-4 text-black md:bottom-2 md:w-7/12 lg:w-5/12 lg:p-8 2xl:w-4/12">
+    <div
+      className={`${isOpen ? 'block' : 'hidden'} dialog fixed bottom-0 left-0 right-0 top-0 h-screen w-screen bg-black bg-opacity-80`}
+      onClick={(e) => closeModal(e)}
+    >
+      <div className="dialog-inner absolute bottom-8 left-2/4 max-h-svh w-11/12 -translate-x-2/4 rounded-2xl border-4 border-black bg-primary p-4 text-black md:bottom-2 md:w-7/12 lg:w-5/12 lg:p-8 2xl:w-4/12">
         <form
           ref={form}
           onSubmit={sendEmail}
-          className="flex flex-col gap-4 md:gap-8"
+          className="flex flex-col gap-2 md:gap-4"
         >
-          <div className="flex flex-col items-center justify-between gap-4 md:flex-row md:gap-8">
+          <div className="flex flex-col items-center justify-between gap-2 md:flex-row md:gap-4">
             <Inputs>
               <label htmlFor="email">Email*</label>
               <input
@@ -153,7 +156,7 @@ function ContactModal({ title = 'DEFAULT' }) {
               name="message"
               id="message"
               className="h-48 w-full resize-none rounded-md bg-black p-4 text-white"
-              placeholder="Décrivez moi votre budget avec le plus de détails possible, je vous répondrai le plus rapidement possible 😉"
+              placeholder="Décrivez moi votre projet avec le plus de détails possible 😉"
               value={message}
               onInput={(event) => setMessage(event.target.value)}
               onBlur={() => setDisplayMessageError(true)}
@@ -168,14 +171,14 @@ function ContactModal({ title = 'DEFAULT' }) {
                 <div className="mt-4 text-sm text-red-500">
                   <ul className="list-disc space-y-1 pl-5">
                     {emailError && <li>{emailError}</li>}
-                    {messageError && <li>{messageError}</li>}
                     {budgetError && <li>{budgetError}</li>}
+                    {messageError && <li>{messageError}</li>}
                   </ul>
                 </div>
               </div>
             )}
           <button
-            className="mx-auto flex cursor-pointer items-center justify-center rounded-md bg-black px-4 py-2 uppercase text-primary transition-all"
+            className="mx-auto flex cursor-pointer items-center justify-center rounded-md border-2 border-black bg-black px-4 py-2 text-lg uppercase text-primary transition-all hover:bg-primary hover:text-black lg:text-xl"
             type="submit"
             disabled={processing}
           >
@@ -206,7 +209,10 @@ function ContactModal({ title = 'DEFAULT' }) {
           </button>
         </form>
       </div>
-      <span className="close absolute right-4 top-4 cursor-pointer rounded-md border-2 border-black bg-primary px-4 py-2 text-2xl text-black">
+      <span
+        className="close absolute right-4 top-4 cursor-pointer rounded-md border-2 border-black bg-primary px-4 py-2 text-2xl text-black"
+        onClick={(e) => closeModal(e)}
+      >
         X
       </span>
     </div>

@@ -1,4 +1,11 @@
-function ButtonLink({ children, to, className, primary = false, ...props }) {
+function ButtonLink({
+  children,
+  to,
+  className,
+  primary = false,
+  onClick,
+  ...props
+}) {
   return (
     <a
       href={to}
@@ -6,6 +13,7 @@ function ButtonLink({ children, to, className, primary = false, ...props }) {
       group relative flex w-fit cursor-pointer items-center justify-center
       overflow-hidden rounded-full border-4 border-solid border-black px-8
       py-2 text-base font-bold uppercase text-black transition-all hover:text-primary md:text-lg lg:text-2xl`}
+      onClick={onClick}
       {...props}
     >
       <span className="relative z-50">{children}</span>

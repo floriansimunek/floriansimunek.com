@@ -1,28 +1,53 @@
+import { useState } from 'react';
 import ArrowLink from './ArrowLink';
 import ButtonLink from './ButtonLink';
 import Container from './Container';
+import ContactModal from './ContactModal';
 
 function Section({ title, primary, id, to, children, className }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  function openModal() {
+    setIsModalOpen(true);
+    document.body.classList.add('modal-opened');
+  }
+
+  function closeModal(e) {
+    if (e.target === e.currentTarget) {
+      setIsModalOpen(false);
+      document.body.classList.remove('modal-opened');
+    }
+  }
+
   return (
-    <Container primary={primary} className={className} id={id}>
-      <Title>{title}</Title>
-      {children && children}
-      <div
-        className={`flex w-full items-center justify-between
+    <>
+      <Container primary={primary} className={className} id={id}>
+        <Title>{title}</Title>
+        {children && children}
+        <div
+          className={`flex w-full items-center justify-between
         ${primary ? 'flex-row-reverse' : ''}`}
-      >
-        <ArrowLink to={to} />
-        {!children && (
-          <div
-            className={`right flex flex-col justify-center gap-2
+        >
+          <ArrowLink to={to} />
+          {!children && (
+            <div
+              className={`right flex flex-col justify-center gap-2
           ${primary ? 'items-start' : 'items-end'}`}
-          >
-            <ButtonLink primary={primary}>Demander un devis</ButtonLink>
-            <ButtonLink primary={primary}>En savoir plus</ButtonLink>
-          </div>
-        )}
-      </div>
-    </Container>
+            >
+              <ButtonLink primary={primary} onClick={openModal}>
+                Demander un devis
+              </ButtonLink>
+              <ButtonLink primary={primary}>En savoir plus</ButtonLink>
+            </div>
+          )}
+        </div>
+      </Container>
+      <ContactModal
+        title={title}
+        isOpen={isModalOpen}
+        closeModal={closeModal}
+      />
+    </>
   );
 }
 
