@@ -1,6 +1,6 @@
 import { HashLink } from 'react-router-hash-link';
 
-function ArrowLink({ to = '', up = false, className, ...props }) {
+function ArrowLink({ to = ' ', up = false, className, ...props }) {
   return (
     <HashLink
       to={'#' + to}

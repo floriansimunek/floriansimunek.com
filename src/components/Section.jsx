@@ -2,22 +2,25 @@ import ArrowLink from './ArrowLink';
 import ButtonLink from './ButtonLink';
 import Container from './Container';
 
-function Section({ title, primary, id, to }) {
+function Section({ title, primary, id, to, children, className }) {
   return (
-    <Container primary={primary} id={id}>
+    <Container primary={primary} className={className} id={id}>
       <Title>{title}</Title>
+      {children && children}
       <div
         className={`flex w-full items-center justify-between
         ${primary ? 'flex-row-reverse' : ''}`}
       >
         <ArrowLink to={to} />
-        <div
-          className={`right flex flex-col justify-center gap-2
+        {!children && (
+          <div
+            className={`right flex flex-col justify-center gap-2
           ${primary ? 'items-start' : 'items-end'}`}
-        >
-          <ButtonLink primary={primary}>Demander un devis</ButtonLink>
-          <ButtonLink primary={primary}>En savoir plus</ButtonLink>
-        </div>
+          >
+            <ButtonLink primary={primary}>Demander un devis</ButtonLink>
+            <ButtonLink primary={primary}>En savoir plus</ButtonLink>
+          </div>
+        )}
       </div>
     </Container>
   );

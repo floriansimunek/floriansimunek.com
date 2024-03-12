@@ -1,11 +1,11 @@
 import App from '@components/App.jsx';
+import Lenis from '@studio-freight/lenis';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Lenis from '@studio-freight/lenis';
 import './main.css';
 
 /* LENIS */
-const lenis = new Lenis();
+const lenis = new Lenis({ lerp: 0.2 });
 function raf(time) {
   lenis.raf(time);
   requestAnimationFrame(raf);

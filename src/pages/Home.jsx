@@ -1,5 +1,6 @@
 import Hero from '@components/Hero';
 import Section from '@components/Section';
+import Reviews from '@components/Reviews';
 
 function Home() {
   return (
@@ -24,20 +25,15 @@ function Home() {
       <Section
         title="Améliorez, réparez ou optimisez votre site web"
         id="upgrade-repair-optimize"
-        to="model-creation"
-        primary
-      />
-      <Section
-        title="Créez la maquette de votre site web"
-        id="model-creation"
         to="learn-to-create"
+        primary
       />
       <Section
         title="Créez votre site web par vous-même"
         id="learn-to-create"
-        to="footer"
-        primary
+        to="reviews"
       />
+      <Reviews title="Avis clients" id="reviews" to="footer" />
     </>
   );
 }
