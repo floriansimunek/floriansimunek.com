@@ -19,6 +19,11 @@ function Section({ title, primary, id, to, children, className }) {
     }
   }
 
+  function forceCloseModal() {
+    setIsModalOpen(false);
+    document.body.classList.remove('modal-opened');
+  }
+
   return (
     <>
       <Container primary={primary} className={className} id={id}>
@@ -46,6 +51,7 @@ function Section({ title, primary, id, to, children, className }) {
         title={title}
         isOpen={isModalOpen}
         closeModal={closeModal}
+        forceCloseModal={forceCloseModal}
       />
     </>
   );

@@ -8,7 +8,12 @@ const validateField = (value, minLength, errorMessage) => {
   return null;
 };
 
-function ContactModal({ title = 'DEFAULT', isOpen = false, closeModal }) {
+function ContactModal({
+  title = 'DEFAULT',
+  isOpen = false,
+  closeModal,
+  forceCloseModal,
+}) {
   const form = useRef();
 
   const [email, setEmail] = useState('');
@@ -25,6 +30,8 @@ function ContactModal({ title = 'DEFAULT', isOpen = false, closeModal }) {
   const [displayBudgetError, setDisplayBudgetError] = useState(false);
 
   const [processing, setProcessing] = useState(false);
+  const [errorModalOpen, setErrorModalOpen] = useState(false);
+  const [successModalOpen, setSuccessModalOpen] = useState(false);
 
   useEffect(() => {
     setObject(title);
@@ -78,144 +85,274 @@ function ContactModal({ title = 'DEFAULT', isOpen = false, closeModal }) {
         )
         .then(
           () => {
+            forceCloseModal();
+            setSuccessModalOpen(true);
+            document.body.classList.add('modal-opened');
             setEmail('');
             setMessage('');
             setBudget('');
             setProcessing(false);
           },
-          (error) => {
-            console.log(error.text);
+          () => {
+            forceCloseModal();
+            setErrorModalOpen(true);
+            document.body.classList.add('modal-opened');
           },
         );
     }
   };
 
   return (
-    <div
-      className={`${isOpen ? 'block' : 'hidden'} dialog fixed bottom-0 left-0 right-0 top-0 h-screen w-screen bg-black bg-opacity-80`}
-      onClick={(e) => closeModal(e)}
-    >
-      <div className="dialog-inner absolute bottom-8 left-2/4 max-h-svh w-11/12 -translate-x-2/4 rounded-2xl border-4 border-black bg-primary p-4 text-black md:bottom-2 md:w-7/12 lg:w-5/12 lg:p-8 2xl:w-4/12">
-        <form
-          ref={form}
-          onSubmit={sendEmail}
-          className="flex flex-col gap-2 md:gap-4"
-        >
-          <div className="flex flex-col items-center justify-between gap-2 md:flex-row md:gap-4">
-            <Inputs>
-              <label htmlFor="email">Email*</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                className="w-full rounded-md bg-black p-4 text-white"
-                placeholder="exemple@exemple.com"
-                autoComplete="email"
-                value={email}
-                onInput={(event) => setEmail(event.target.value)}
-                onBlur={() => setDisplayEmailError(true)}
-              />
-            </Inputs>
-            <Inputs className="hidden">
-              <label htmlFor="object">Objet</label>
-              <input
-                type="text"
-                name="object"
-                id="object"
-                value={object}
-                readOnly
-                className="disabled w-full rounded-md bg-gray-800 p-4 text-gray-500"
-              />
-            </Inputs>
-          </div>
-          <Inputs>
-            <label htmlFor="budget">Votre budget*</label>
-            <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4">
-              <Radio value="0€ - 500€" budget={budget} setBudget={setBudget} />
-              <Radio
-                value="500€ - 1000€"
-                budget={budget}
-                setBudget={setBudget}
-              />
-              <Radio
-                value="1500€ - 3000€"
-                budget={budget}
-                setBudget={setBudget}
-              />
-              <Radio
-                value="3000€ - 5000€"
-                budget={budget}
-                setBudget={setBudget}
-              />
-              <Radio value="+ 5000€" budget={budget} setBudget={setBudget} />
-            </div>
-          </Inputs>
-          <Inputs>
-            <label htmlFor="message">Message*</label>
-            <textarea
-              name="message"
-              id="message"
-              className="h-48 w-full resize-none rounded-md bg-black p-4 text-white"
-              placeholder="Décrivez moi votre projet avec le plus de détails possible 😉"
-              value={message}
-              onInput={(event) => setMessage(event.target.value)}
-              onBlur={() => setDisplayMessageError(true)}
-            />
-          </Inputs>
-          {(displayEmailError || displayMessageError || displayBudgetError) &&
-            (emailError || messageError || budgetError) && (
-              <div className="w-full rounded-md bg-red-950 p-4">
-                <h3 className="text-sm font-medium text-red-600">
-                  Le formulaire n&apos;est pas rempli
-                </h3>
-                <div className="mt-4 text-sm text-red-500">
-                  <ul className="list-disc space-y-1 pl-5">
-                    {emailError && <li>{emailError}</li>}
-                    {budgetError && <li>{budgetError}</li>}
-                    {messageError && <li>{messageError}</li>}
-                  </ul>
-                </div>
-              </div>
-            )}
-          <button
-            className="mx-auto flex cursor-pointer items-center justify-center rounded-md border-2 border-black bg-black px-4 py-2 text-lg uppercase text-primary transition-all hover:bg-primary hover:text-black lg:text-xl"
-            type="submit"
-            disabled={processing}
-          >
-            {processing && (
-              <svg
-                className="-ml-1 mr-3 h-5 w-5 animate-spin text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <circle
-                  className="opacity-25"
-                  cx="12"
-                  cy="12"
-                  r="10"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                />
-                <path
-                  className="opacity-75"
-                  fill="currentColor"
-                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                />
-              </svg>
-            )}
-            {processing
-              ? "Votre message est en cours d'envoi"
-              : 'Envoyer votre message'}
-          </button>
-        </form>
-      </div>
-      <span
-        className="close absolute right-4 top-4 cursor-pointer rounded-md border-2 border-black bg-primary px-4 py-2 text-2xl text-black"
+    <>
+      <div
+        className={`${isOpen ? 'block' : 'hidden'} dialog fixed bottom-0 left-0 right-0 top-0 h-screen w-screen bg-black bg-opacity-80`}
         onClick={(e) => closeModal(e)}
       >
-        X
-      </span>
-    </div>
+        <div className="dialog-inner absolute bottom-8 left-2/4 max-h-svh w-11/12 -translate-x-2/4 rounded-2xl border-4 border-black bg-primary p-4 text-black md:bottom-2 md:w-7/12 lg:w-5/12 lg:p-8 2xl:w-4/12">
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="flex flex-col gap-2 md:gap-4"
+          >
+            <div className="flex flex-col items-center justify-between gap-2 md:flex-row md:gap-4">
+              <Inputs>
+                <label htmlFor="email">Email*</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  className="w-full rounded-md bg-black p-4 text-white"
+                  placeholder="exemple@exemple.com"
+                  autoComplete="email"
+                  value={email}
+                  onInput={(event) => setEmail(event.target.value)}
+                  onBlur={() => setDisplayEmailError(true)}
+                />
+              </Inputs>
+              <Inputs className="hidden">
+                <label htmlFor="object">Objet</label>
+                <input
+                  type="text"
+                  name="object"
+                  id="object"
+                  value={object}
+                  readOnly
+                  className="disabled w-full rounded-md bg-gray-800 p-4 text-black"
+                />
+              </Inputs>
+            </div>
+            <Inputs>
+              <label htmlFor="budget">Votre budget*</label>
+              <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4">
+                <Radio
+                  value="0€ - 500€"
+                  budget={budget}
+                  setBudget={setBudget}
+                />
+                <Radio
+                  value="500€ - 1000€"
+                  budget={budget}
+                  setBudget={setBudget}
+                />
+                <Radio
+                  value="1500€ - 3000€"
+                  budget={budget}
+                  setBudget={setBudget}
+                />
+                <Radio
+                  value="3000€ - 5000€"
+                  budget={budget}
+                  setBudget={setBudget}
+                />
+                <Radio value="+ 5000€" budget={budget} setBudget={setBudget} />
+              </div>
+            </Inputs>
+            <Inputs>
+              <label htmlFor="message">Message*</label>
+              <textarea
+                name="message"
+                id="message"
+                className="h-48 w-full resize-none rounded-md bg-black p-4 text-white"
+                placeholder="Décrivez moi votre projet avec le plus de détails possible 😉"
+                value={message}
+                onInput={(event) => setMessage(event.target.value)}
+                onBlur={() => setDisplayMessageError(true)}
+              />
+            </Inputs>
+            {(displayEmailError || displayMessageError || displayBudgetError) &&
+              (emailError || messageError || budgetError) && (
+                <div className="w-full rounded-md bg-red-950 p-4">
+                  <h3 className="text-sm font-medium text-red-600">
+                    Le formulaire n&apos;est pas rempli
+                  </h3>
+                  <div className="mt-4 text-sm text-red-500">
+                    <ul className="list-disc space-y-1 pl-5">
+                      {emailError && <li>{emailError}</li>}
+                      {budgetError && <li>{budgetError}</li>}
+                      {messageError && <li>{messageError}</li>}
+                    </ul>
+                  </div>
+                </div>
+              )}
+            <button
+              className="mx-auto flex cursor-pointer items-center justify-center rounded-md border-2 border-black bg-black px-4 py-2 text-lg uppercase text-primary transition-all hover:bg-primary hover:text-black lg:text-xl"
+              type="submit"
+              disabled={processing}
+            >
+              {processing && (
+                <svg
+                  className="-ml-1 mr-3 h-5 w-5 animate-spin text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  />
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  />
+                </svg>
+              )}
+              {processing
+                ? "Votre message est en cours d'envoi"
+                : 'Envoyer votre message'}
+            </button>
+          </form>
+        </div>
+        <span
+          className="close absolute right-4 top-4 cursor-pointer rounded-md border-2 border-black bg-primary px-4 py-2 text-2xl text-black"
+          onClick={(e) => closeModal(e)}
+        >
+          X
+        </span>
+      </div>
+      {successModalOpen && (
+        <div
+          className="fixed inset-0 h-full w-full bg-black bg-opacity-80"
+          style={{ zIndex: '99999' }}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setSuccessModalOpen(false);
+              setProcessing(false);
+              document.body.classList.remove('modal-opened');
+            }
+          }}
+        >
+          <span
+            className="close absolute right-4 top-4 cursor-pointer rounded-md border-2 border-black bg-primary px-4 py-2 text-2xl text-black"
+            onClick={() => {
+              setSuccessModalOpen(false);
+              setProcessing(false);
+              document.body.classList.remove('modal-opened');
+            }}
+          >
+            X
+          </span>
+          <div className="absolute left-1/2 top-1/2 h-auto w-11/12 -translate-x-1/2 -translate-y-1/2 rounded-2xl border-4 border-black bg-primary p-4 text-center sm:w-10/12 sm:p-8 lg:w-6/12 2xl:w-2/6">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="mb-4 max-h-16 w-full sm:max-h-24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              />
+            </svg>
+
+            <h5 className="text-2xl font-semibold leading-6 text-black">
+              Votre email à été envoyé
+            </h5>
+            <div className="mt-4">
+              <p className="text-xl text-black">
+                Bonjour 👋
+                <br />
+                et merci pour votre message !
+                <br />
+                <br />
+                Je répond à votre email le plus rapidement possible !
+                <br />
+                Pensez à regarder votre boite mail 😊
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+      {errorModalOpen && (
+        <div
+          className="fixed inset-0 h-full w-full bg-black bg-opacity-80"
+          style={{ zIndex: '99999' }}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setErrorModalOpen(false);
+              setProcessing(false);
+              document.body.classList.remove('modal-opened');
+            }
+          }}
+        >
+          <span
+            className="close absolute right-4 top-4 cursor-pointer rounded-md border-2 border-black bg-primary px-4 py-2 text-2xl text-black"
+            onClick={() => {
+              setErrorModalOpen(false);
+              setProcessing(false);
+              document.body.classList.remove('modal-opened');
+            }}
+          >
+            X
+          </span>
+          <div className="absolute left-1/2 top-1/2 h-auto w-11/12 -translate-x-1/2 -translate-y-1/2 rounded-2xl border-4 border-black bg-primary p-4 text-center sm:w-10/12 sm:p-8 lg:w-6/12 2xl:w-2/6">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="mb-4 max-h-16 w-full sm:max-h-24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
+              />
+            </svg>
+            <h5 className="text-2xl font-semibold leading-6 text-black">
+              Une erreur est survenue
+            </h5>
+            <div className="mt-2">
+              <p className="text-lg text-black">
+                Votre email n&apos;a pas été envoyé, complétez à nouveau le
+                formulaire
+              </p>
+              <br />
+              <p className="text-lg text-black">
+                Ça ne fonctionne toujours pas ?
+                <br />
+                Envoyez-moi un email directement
+                <br />
+                <a
+                  href="mailto:contact@floriansimunek.com"
+                  className="mx-auto mt-4 block w-fit rounded-md bg-black px-4 py-2 text-primary"
+                >
+                  <span aria-hidden="true">&rarr;&nbsp;</span>
+                  contact@floriansimunek.com
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
@@ -237,6 +374,7 @@ function Radio({ value, budget, setBudget }) {
       htmlFor={`budget-${value}`}
       className={`${isChecked ? 'bg-black text-primary' : 'bg-primary text-black'}
       flex cursor-pointer flex-wrap items-center justify-center gap-2 rounded-md border-2 border-black px-4 py-2 font-semibold`}
+      onClick={() => setBudget(value)}
     >
       <input
         type="radio"
@@ -245,7 +383,7 @@ function Radio({ value, budget, setBudget }) {
         value={value}
         className="hidden"
         checked={isChecked}
-        onChange={() => setBudget(value)}
+        readOnly
       />
       {value}
     </label>
