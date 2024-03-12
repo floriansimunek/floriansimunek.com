@@ -69,7 +69,7 @@ function Review({ title, id, to, ...props }) {
       {...props}
       primary
     >
-      <div className="mx-auto flex h-full w-full flex-1 flex-col items-center justify-center gap-2 md:w-3/4 md:gap-4 lg:w-3/5 2xl:w-2/5">
+      <div className="mx-auto flex h-full w-full flex-1 flex-col items-center justify-center gap-2 md:w-3/4 md:gap-4 lg:w-3/5 2xl:w-2/4">
         <span className="text-center text-xl font-semibold md:text-3xl lg:text-4xl 2xl:text-5xl">
           &quot;{TEXTS[index % TEXTS.length].text}&quot;
         </span>
