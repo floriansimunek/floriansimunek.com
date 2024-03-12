@@ -106,7 +106,7 @@ function Footer() {
             target="_blank"
             rel="noreferrer"
           >
-            contact@floriansimunek.com
+            Email
           </ListItem>
         </List>
       </Menu>
