@@ -5,7 +5,7 @@ function ArrowLink({ to = ' ', up = false, className, ...props }) {
     <HashLink
       to={'#' + to}
       className={`${className}
-      group relative block h-16 w-16 cursor-pointer overflow-hidden rounded-full lg:h-20 lg:w-20`}
+      group relative block h-16 w-16 animate-bounce cursor-pointer overflow-hidden rounded-full lg:h-20 lg:w-20`}
       smooth
       {...props}
     >

@@ -79,8 +79,8 @@ function Review({ title, id, to, ...props }) {
         </span>
       </div>
       <div className="absolute bottom-8 left-2/4 flex w-full -translate-x-2/4 items-center justify-start gap-8 pl-8 md:justify-center md:gap-16 md:pl-0 lg:bottom-16">
-        <ArrowLink onClick={indexDown} className="rotate-90" />
-        <ArrowLink onClick={indexUp} className="-rotate-90" />
+        <ArrowLink onClick={indexDown} className="!rotate-90" />
+        <ArrowLink onClick={indexUp} className="!-rotate-90" />
       </div>
     </Section>
   );
