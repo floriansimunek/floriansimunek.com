@@ -34,7 +34,7 @@ function Footer() {
         <h3 className="mt-2 text-3xl font-extrabold uppercase md:text-6xl lg:text-8xl">
           Entrons en contact
         </h3>
-        <CTA className="mt-8 w-full md:mx-auto lg:w-2/4" dark />
+        <CTA className="mt-8 w-full md:mx-auto xl:w-2/4" dark />
       </div>
       <Menu>
         <List wide>
@@ -123,7 +123,7 @@ function Footer() {
 
 function Menu({ children }) {
   return (
-    <nav className="flex w-full flex-col items-center justify-center gap-8 lg:flex-row lg:items-start lg:gap-16">
+    <nav className="flex w-full flex-col items-center justify-center gap-8 lg:items-start xl:flex-row xl:gap-16">
       {children}
     </nav>
   );
@@ -131,7 +131,7 @@ function Menu({ children }) {
 
 function List({ children, wide = false }) {
   return (
-    <ul className={`flex w-full flex-col ${!wide ? 'lg:w-1/2' : 'w-full'}`}>
+    <ul className={`flex w-full flex-col ${!wide ? 'xl:w-1/2' : 'w-full'}`}>
       {children}
     </ul>
   );
