@@ -1,6 +1,7 @@
 import { HashLink } from 'react-router-hash-link';
 import ArrowLink from './ArrowLink';
 import CTA from './CTA';
+import services from '@/services';
 
 function getTime() {
   const date = new Date();
@@ -39,20 +40,19 @@ function Footer() {
       <Menu>
         <List wide>
           <ListTitle>Navigation</ListTitle>
-          <ListItem to="website-creation">Créez votre site web</ListItem>
-          <ListItem to="react-app-creation">
-            Créez votre application React
+          <ListItem onClick={scrollTop} to="">
+            Accueil
           </ListItem>
-          <ListItem to="html-css-integration">Intégration HTML & CSS</ListItem>
-          <ListItem to="upgrade-repair-optimize">
-            Améliorez, réparez ou optimisez votre site
-          </ListItem>
-          <ListItem to="model-creation">
-            Créez la maquette de votre site web
-          </ListItem>
-          <ListItem to="learn-to-create">
-            Créez votre site web par vous-même
-          </ListItem>
+          {Object.keys(services).map((key) => {
+            const service = services[key];
+
+            return (
+              <ListItem key={key} to={service.id}>
+                {service.title}
+              </ListItem>
+            );
+          })}
+          <ListItem to="reviews">Avis clients</ListItem>
         </List>
         <List>
           <ListTitle>Réseaux</ListTitle>

@@ -498,7 +498,7 @@ const services = {
   learnJavascript: {
     title: 'Apprenez Javascript',
     slug: 'apprendez-javascript',
-    id: 'repair',
+    id: 'learn-javascript',
     to: 'reviews',
     benefits: {
       title: 'Pourquoi apprendre JavaScript ?',

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import ArrowLink from './ArrowLink';
 import ButtonLink from './ButtonLink';
-import Container from './Container';
 import ContactModal from './ContactModal';
+import Container from './Container';
 
 function Section({ title, primary, id, to, children, className, slug }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
