@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ArrowLink from './ArrowLink';
 import Section from './Section';
 
@@ -47,6 +47,13 @@ const TEXTS = [
 
 function Review({ title, id, to, ...props }) {
   const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      indexUp();
+    }, 1000 * 10);
+    return () => clearInterval(timer);
+  }, []);
 
   function indexUp() {
     setIndex((index) => index + 1);
