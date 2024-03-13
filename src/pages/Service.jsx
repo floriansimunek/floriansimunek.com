@@ -1,10 +1,14 @@
 import services from '@/services';
 import { Arrow } from '@components/ArrowLink';
+import ButtonLink from '@components/ButtonLink';
 import CTA from '@components/CTA';
+import ContactModal from '@components/ContactModal';
 import Container from '@components/Container';
 import { Title } from '@components/Section';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+
+// TODO: Add button "Demander un devis"
 
 function Service() {
   const { slug } = useParams();
@@ -22,6 +26,25 @@ function Service() {
 
     setService(foundService);
   }, [slug, navigate]);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  function openModal() {
+    setIsModalOpen(true);
+    document.body.classList.add('modal-opened');
+  }
+
+  function closeModal(e) {
+    if (e.target === e.currentTarget) {
+      setIsModalOpen(false);
+      document.body.classList.remove('modal-opened');
+    }
+  }
+
+  function forceCloseModal() {
+    setIsModalOpen(false);
+    document.body.classList.remove('modal-opened');
+  }
 
   return (
     service && (
@@ -64,16 +87,25 @@ function Service() {
             {Object.keys(service.faq).map((key) => (
               <FAQ key={key} question={key} answer={service.faq[key]} />
             ))}
+            <ButtonLink className="mt-4 lg:mt-8" onClick={openModal}>
+              Demander un devis
+            </ButtonLink>
           </InnerContainer>
         </Wrapper>
         <Wrapper>
           <SectionTitle>Discutons de votre projet de vive-voix</SectionTitle>
           <CTA
-            className="mt-4 w-full lg:mt-8 lg:!justify-center lg:gap-16 lg:py-20"
+            className="mt-2 w-full lg:mt-4 lg:!justify-center lg:gap-16 lg:py-20"
             dark
             white
           />
         </Wrapper>
+        <ContactModal
+          title={service.title}
+          isOpen={isModalOpen}
+          closeModal={closeModal}
+          forceCloseModal={forceCloseModal}
+        />
       </Container>
     )
   );
@@ -131,7 +163,7 @@ function FAQ({ question, answer }) {
 
 function InnerContainer({ children }) {
   return (
-    <div className="mt-4 flex w-full flex-col items-start justify-center gap-2 lg:mt-8 lg:gap-4">
+    <div className="mt-4 flex w-full flex-col items-center justify-center gap-2 lg:mt-8 lg:gap-4">
       {children}
     </div>
   );
