@@ -4,7 +4,7 @@ import ButtonLink from './ButtonLink';
 import Container from './Container';
 import ContactModal from './ContactModal';
 
-function Section({ title, primary, id, to, children, className }) {
+function Section({ title, primary, id, to, children, className, slug }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   function openModal() {
@@ -42,7 +42,9 @@ function Section({ title, primary, id, to, children, className }) {
               <ButtonLink primary={primary} onClick={openModal}>
                 Demander un devis
               </ButtonLink>
-              <ButtonLink primary={primary}>En savoir plus</ButtonLink>
+              <ButtonLink primary={primary} to={`/services/${slug}`}>
+                En savoir plus
+              </ButtonLink>
             </div>
           )}
         </div>
@@ -57,7 +59,7 @@ function Section({ title, primary, id, to, children, className }) {
   );
 }
 
-function Title({ children }) {
+export function Title({ children }) {
   return (
     <h2 className="w-full text-start text-5xl font-extrabold uppercase md:text-6xl lg:w-4/5 lg:text-7xl 2xl:w-3/5">
       {children}

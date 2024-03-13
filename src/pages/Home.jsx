@@ -1,38 +1,26 @@
 import Hero from '@components/Hero';
 import Section from '@components/Section';
 import Reviews from '@components/Reviews';
+import services from '@/services';
 
 function Home() {
   return (
     <>
       <Hero />
-      <Section
-        title="Créez votre site web"
-        id="website-creation"
-        to="react-app-creation"
-      />
-      <Section
-        title="Créez votre application React"
-        id="react-app-creation"
-        to="html-css-integration"
-        primary
-      />
-      <Section
-        title="Intégration HTML & CSS"
-        id="html-css-integration"
-        to="upgrade-repair-optimize"
-      />
-      <Section
-        title="Améliorez, réparez ou optimisez votre site web"
-        id="upgrade-repair-optimize"
-        to="learn-to-create"
-        primary
-      />
-      <Section
-        title="Créez votre site web par vous-même"
-        id="learn-to-create"
-        to="reviews"
-      />
+      {Object.keys(services).map((key, k) => {
+        const service = services[key];
+
+        return (
+          <Section
+            key={service.title}
+            title={service.title}
+            id={service.id}
+            to={service.to}
+            slug={service.slug}
+            primary={k % 2 !== 0}
+          />
+        );
+      })}
       <Reviews title="Avis clients" id="reviews" to="footer" />
     </>
   );

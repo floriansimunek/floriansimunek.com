@@ -1,10 +1,10 @@
-function CTA({ className, dark = false }) {
+function CTA({ className, dark = false, white = false }) {
   return (
     <a
       href="https://floriansimunek.trafft.com/"
       target="_blank"
       rel="noreferrer"
-      className={`group relative ${className} flex items-center justify-between gap-2 overflow-hidden rounded-2xl bg-primary px-8 py-12 text-2xl font-extrabold uppercase text-black transition-all md:text-4xl lg:justify-around 2xl:text-5xl`}
+      className={`group relative ${className} flex items-center justify-between gap-2 overflow-hidden rounded-2xl ${white ? 'bg-white' : 'bg-primary'} px-8 py-12 text-2xl font-extrabold uppercase text-black transition-all md:text-4xl lg:justify-around 2xl:text-5xl`}
     >
       <span
         className={`z-50 flex flex-col text-start lg:flex-row ${
