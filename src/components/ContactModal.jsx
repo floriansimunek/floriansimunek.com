@@ -227,10 +227,23 @@ function ContactModal({
           </form>
         </div>
         <span
-          className="close absolute right-4 top-4 cursor-pointer rounded-md border-2 border-black bg-primary px-4 py-2 text-2xl text-black"
+          className="close absolute right-4 top-4 cursor-pointer px-4 py-2 text-2xl text-primary"
           onClick={(e) => closeModal(e)}
         >
-          X
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="pointer-events-none h-6 w-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
         </span>
       </div>
       {successModalOpen && (
@@ -246,14 +259,27 @@ function ContactModal({
           }}
         >
           <span
-            className="close absolute right-4 top-4 cursor-pointer rounded-md border-2 border-black bg-primary px-4 py-2 text-2xl text-black"
+            className="close absolute right-4 top-4 cursor-pointer px-4 py-2 text-2xl text-primary"
             onClick={() => {
               setSuccessModalOpen(false);
               setProcessing(false);
               document.body.classList.remove('modal-opened');
             }}
           >
-            X
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="pointer-events-none h-6 w-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18 18 6M6 6l12 12"
+              />
+            </svg>
           </span>
           <div className="absolute left-1/2 top-1/2 h-auto w-11/12 -translate-x-1/2 -translate-y-1/2 rounded-2xl border-4 border-black bg-primary p-4 text-center sm:w-10/12 sm:p-8 lg:w-6/12 2xl:w-2/6">
             <svg
@@ -302,14 +328,27 @@ function ContactModal({
           }}
         >
           <span
-            className="close absolute right-4 top-4 cursor-pointer rounded-md border-2 border-black bg-primary px-4 py-2 text-2xl text-black"
+            className="close absolute right-4 top-4 cursor-pointer px-4 py-2 text-2xl text-primary"
             onClick={() => {
               setErrorModalOpen(false);
               setProcessing(false);
               document.body.classList.remove('modal-opened');
             }}
           >
-            X
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="pointer-events-none h-6 w-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18 18 6M6 6l12 12"
+              />
+            </svg>
           </span>
           <div className="absolute left-1/2 top-1/2 h-auto w-11/12 -translate-x-1/2 -translate-y-1/2 rounded-2xl border-4 border-black bg-primary p-4 text-center sm:w-10/12 sm:p-8 lg:w-6/12 2xl:w-2/6">
             <svg
