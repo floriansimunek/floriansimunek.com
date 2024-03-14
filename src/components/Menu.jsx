@@ -7,7 +7,7 @@ function Menu() {
 
   useEffect(() => {
     function handleScroll() {
-      if (window.scrollY > window.innerHeight / 2) {
+      if (window.scrollY > window.innerHeight / 4) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -22,11 +22,11 @@ function Menu() {
 
   return (
     <div
-      className={`${isVisible ? 'opacity-100' : 'opacity-0'} fixed left-0 top-0 flex w-full flex-col items-start justify-start overflow-hidden p-2 transition-all`}
+      className={`${isVisible ? 'opacity-100' : 'opacity-0'} ${isOpen ? 'pointer-events-auto' : 'pointer-events-none'} fixed left-0 top-0 flex w-full flex-col items-start justify-start overflow-hidden p-2 transition-all`}
       style={{ zIndex: 998 }}
     >
       <span
-        className="button group relative mb-2 cursor-pointer overflow-hidden rounded-full border-4 border-black bg-white p-4 hover:text-primary lg:p-6"
+        className="button group pointer-events-auto relative mb-2 cursor-pointer overflow-hidden rounded-full border-4 border-black bg-white p-4 hover:text-primary lg:p-6"
         onClick={() => setIsOpen((isOpen) => !isOpen)}
       >
         <svg
