@@ -111,24 +111,28 @@ function TextBanner({ primary }) {
       <div className="text-banner inline-block overflow-hidden whitespace-nowrap">
         <p
           className={`inline-block uppercase ${primary ? 'text-primary' : ''}`}
+          aria-hidden
         >
           Florian SIMUNEK
         </p>
         &nbsp;
         <p
           className={`inline-block uppercase ${primary ? 'text-primary' : ''}`}
+          aria-hidden
         >
           Florian SIMUNEK
         </p>
         &nbsp;
         <p
           className={`inline-block uppercase ${primary ? 'text-primary' : ''}`}
+          aria-hidden
         >
           Florian SIMUNEK
         </p>
         &nbsp;
         <p
           className={`inline-block uppercase ${primary ? 'text-primary' : ''}`}
+          aria-hidden
         >
           Florian SIMUNEK
         </p>
