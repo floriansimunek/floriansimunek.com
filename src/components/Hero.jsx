@@ -44,7 +44,8 @@ function Hero() {
         <div className="relative min-h-96 w-full overflow-hidden rounded-2xl bg-white sm:min-h-0 lg:w-2/6">
           <img
             src={profilePicture}
-            alt="Photo de profil"
+            alt="Photo de profil Florian SIMUNEK"
+            title="Photo de profil Florian SIMUNEK"
             className="absolute bottom-0 left-0 right-0 z-50"
           />
           <div className="flex h-full w-full flex-col items-center justify-between py-4">
