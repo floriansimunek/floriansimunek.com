@@ -8,6 +8,10 @@ const validateField = (value, minLength, errorMessage) => {
   return null;
 };
 
+const formatText = (text) => {
+  return text.toLowerCase().replace(/[^a-z0-9]/g, '');
+};
+
 function ContactModal({
   title = 'DEFAULT',
   isOpen = false,
@@ -116,11 +120,11 @@ function ContactModal({
           >
             <div className="flex flex-col items-center justify-between gap-2 md:flex-row md:gap-4">
               <Inputs>
-                <label htmlFor="email">Email*</label>
+                <label htmlFor={`email-${formatText(title)}`}>Email*</label>
                 <input
                   type="email"
                   name="email"
-                  id="email"
+                  id={`email-${formatText(title)}`}
                   className="w-full rounded-md bg-black p-4 text-white"
                   placeholder="exemple@exemple.com"
                   autoComplete="email"
@@ -130,11 +134,11 @@ function ContactModal({
                 />
               </Inputs>
               <Inputs className="hidden">
-                <label htmlFor="object">Objet</label>
+                <label htmlFor={`object-${formatText(title)}`}>Objet</label>
                 <input
                   type="text"
                   name="object"
-                  id="object"
+                  id={`object-${formatText(title)}`}
                   value={object}
                   readOnly
                   className="disabled w-full rounded-md bg-gray-800 p-4 text-black"
@@ -142,36 +146,47 @@ function ContactModal({
               </Inputs>
             </div>
             <Inputs>
-              <label htmlFor="budget">Votre budget*</label>
-              <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4">
+              <fieldset className="flex flex-wrap items-center justify-center gap-2 md:gap-4">
+                <legend className="mx-auto mb-2 text-center md:mb-4">
+                  Votre budget*
+                </legend>
                 <Radio
                   value="0€ - 500€"
                   budget={budget}
                   setBudget={setBudget}
+                  title={title}
                 />
                 <Radio
                   value="500€ - 1000€"
                   budget={budget}
                   setBudget={setBudget}
+                  title={title}
                 />
                 <Radio
                   value="1500€ - 3000€"
                   budget={budget}
                   setBudget={setBudget}
+                  title={title}
                 />
                 <Radio
                   value="3000€ - 5000€"
                   budget={budget}
                   setBudget={setBudget}
+                  title={title}
                 />
-                <Radio value="+ 5000€" budget={budget} setBudget={setBudget} />
-              </div>
+                <Radio
+                  value="+ 5000€"
+                  budget={budget}
+                  setBudget={setBudget}
+                  title={title}
+                />
+              </fieldset>
             </Inputs>
             <Inputs>
-              <label htmlFor="message">Message*</label>
+              <label htmlFor={`message-${formatText(title)}`}>Message*</label>
               <textarea
                 name="message"
-                id="message"
+                id={`message-${formatText(title)}`}
                 className="h-48 w-full resize-none rounded-md bg-black p-4 text-white"
                 placeholder="Décrivez moi votre projet avec le plus de détails possible 😉"
                 value={message}
@@ -405,12 +420,12 @@ function Inputs({ children, className = '' }) {
   );
 }
 
-function Radio({ value, budget, setBudget }) {
+function Radio({ value, title, budget, setBudget }) {
   const isChecked = budget === value;
 
   return (
     <label
-      htmlFor={`budget-${value}`}
+      htmlFor={`budget-${formatText(value)}-${formatText(title)}`}
       className={`${isChecked ? 'bg-black text-primary' : 'bg-primary text-black'}
       flex cursor-pointer flex-wrap items-center justify-center gap-2 rounded-md border-2 border-black px-4 py-2 font-semibold`}
       onClick={() => setBudget(value)}
@@ -418,7 +433,7 @@ function Radio({ value, budget, setBudget }) {
       <input
         type="radio"
         name="budget"
-        id={`budget-${value}`}
+        id={`budget-${formatText(value)}-${formatText(title)}`}
         value={value}
         className="hidden"
         checked={isChecked}
