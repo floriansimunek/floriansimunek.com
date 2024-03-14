@@ -107,31 +107,37 @@ function Bottom({ children, ...props }) {
 
 function TextBanner({ primary }) {
   return (
-    <div className="text-wrapper max-w-full overflow-hidden text-5xl font-extrabold">
-      <div className="text-banner inline-block overflow-hidden whitespace-nowrap">
+    <div
+      className="text-wrapper max-w-full overflow-hidden text-5xl font-extrabold"
+      aria-hidden
+    >
+      <div
+        className="text-banner inline-block overflow-hidden whitespace-nowrap"
+        aria-hidden
+      >
         <p
-          className={`inline-block uppercase ${primary ? 'text-primary' : ''}`}
+          className={`inline-block uppercase ${primary ? 'text-primary' : 'text-black'}`}
           aria-hidden
         >
           Florian SIMUNEK
         </p>
         &nbsp;
         <p
-          className={`inline-block uppercase ${primary ? 'text-primary' : ''}`}
+          className={`inline-block uppercase ${primary ? 'text-primary' : 'text-black'}`}
           aria-hidden
         >
           Florian SIMUNEK
         </p>
         &nbsp;
         <p
-          className={`inline-block uppercase ${primary ? 'text-primary' : ''}`}
+          className={`inline-block uppercase ${primary ? 'text-primary' : 'text-black'}`}
           aria-hidden
         >
           Florian SIMUNEK
         </p>
         &nbsp;
         <p
-          className={`inline-block uppercase ${primary ? 'text-primary' : ''}`}
+          className={`inline-block uppercase ${primary ? 'text-primary' : 'text-black'}`}
           aria-hidden
         >
           Florian SIMUNEK
