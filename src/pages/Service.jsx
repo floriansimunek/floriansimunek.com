@@ -1,14 +1,12 @@
 import services from '@/services';
 import { Arrow } from '@components/ArrowLink';
-import ButtonLink from '@components/ButtonLink';
+import { Button } from '@components/ButtonLink';
 import CTA from '@components/CTA';
 import ContactModal from '@components/ContactModal';
 import Container from '@components/Container';
 import { Title } from '@components/Section';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-
-// TODO: Add button "Demander un devis"
 
 function Service() {
   const { slug } = useParams();
@@ -87,9 +85,9 @@ function Service() {
             {Object.keys(service.faq).map((key) => (
               <FAQ key={key} question={key} answer={service.faq[key]} />
             ))}
-            <ButtonLink className="mt-4 lg:mt-8" onClick={openModal}>
+            <Button className="mt-4 lg:mt-8" onClick={openModal}>
               Demander un devis
-            </ButtonLink>
+            </Button>
           </InnerContainer>
         </Wrapper>
         <Wrapper>

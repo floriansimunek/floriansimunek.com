@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ArrowLink from './ArrowLink';
-import ButtonLink from './ButtonLink';
+import ButtonLink, { Button } from './ButtonLink';
 import ContactModal from './ContactModal';
 import Container from './Container';
 
@@ -39,9 +39,9 @@ function Section({ title, primary, id, to, children, className = '', slug }) {
               className={`right flex flex-col justify-center gap-2
           ${primary ? 'items-start' : 'items-end'}`}
             >
-              <ButtonLink primary={primary} onClick={openModal}>
+              <Button primary={primary} onClick={openModal}>
                 Demander un devis
-              </ButtonLink>
+              </Button>
               <ButtonLink primary={primary} to={`/services/${slug}`}>
                 En savoir plus
               </ButtonLink>

@@ -10,12 +10,9 @@ function ArrowLink({ to = ' ', up = false, className = '', ...props }) {
       {...props}
     >
       <Arrow up={up} />
-      <span
-        className="pointer-events-none invisible select-none opacity-0"
-        aria-hidden
-      >
-        {to && to}
-        {props.onClick && 'button'}
+      <span className="pointer-events-none invisible select-none opacity-0">
+        {to && 'Bouton vers' + to}
+        {props.onClick && 'Bouton'}
       </span>
       <span className="absolute bottom-0 left-0 right-0 top-0 scale-0 rounded-full bg-black transition-all group-hover:scale-100"></span>
     </HashLink>
