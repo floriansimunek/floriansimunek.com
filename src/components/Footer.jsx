@@ -173,18 +173,18 @@ export function ListItem({ children, to, className = '', onClick, ...props }) {
 
 function Copyright() {
   return (
-    <p className="flex flex-col text-2xl font-bold lg:text-5xl">
+    <h4 className="flex flex-col text-2xl font-bold lg:text-5xl">
       &copy; 2021 - {new Date().getFullYear()}
       <span className="uppercase">Florian SIMUNEK</span>
-    </p>
+    </h4>
   );
 }
 
 function Time() {
   return (
-    <p className="flex flex-col text-xl font-bold lg:text-2xl">
+    <h5 className="flex flex-col text-xl font-bold lg:text-2xl">
       LOCAL TIME <span>{getTime()} UTC+1</span>
-    </p>
+    </h5>
   );
 }
 

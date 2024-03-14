@@ -115,21 +115,21 @@ function TextBanner() {
         className="text-banner inline-block overflow-hidden whitespace-nowrap"
         aria-hidden
       >
-        <h6 className={`inline-block uppercase text-black`} aria-hidden>
+        <h3 className={`inline-block uppercase text-black`} aria-hidden>
           Florian SIMUNEK
-        </h6>
+        </h3>
         &nbsp;
-        <h6 className={`inline-block uppercase text-black`} aria-hidden>
+        <h3 className={`inline-block uppercase text-black`} aria-hidden>
           Florian SIMUNEK
-        </h6>
+        </h3>
         &nbsp;
-        <h6 className={`inline-block uppercase text-black`} aria-hidden>
+        <h3 className={`inline-block uppercase text-black`} aria-hidden>
           Florian SIMUNEK
-        </h6>
+        </h3>
         &nbsp;
-        <h6 className={`inline-block uppercase text-black`} aria-hidden>
+        <h3 className={`inline-block uppercase text-black`} aria-hidden>
           Florian SIMUNEK
-        </h6>
+        </h3>
       </div>
     </div>
   );
@@ -137,11 +137,11 @@ function TextBanner() {
 
 function Stat({ className = '', children }) {
   return (
-    <h3
+    <h2
       className={`${className} flex min-h-32 w-full flex-col items-center justify-center rounded-2xl bg-white text-2xl font-extrabold uppercase text-black md:text-4xl 2xl:text-5xl`}
     >
       {children}
-    </h3>
+    </h2>
   );
 }
 
