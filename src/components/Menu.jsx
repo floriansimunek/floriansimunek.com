@@ -1,10 +1,11 @@
 import CTA from '@components/CTA';
 import { ListItem } from '@components/Footer';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 function Menu() {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const menuRef = useRef(null);
 
   useEffect(() => {
     function handleScroll() {
@@ -21,9 +22,23 @@ function Menu() {
     };
   }, []);
 
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [menuRef]);
+
   return (
     <div
-      className={`${isVisible ? 'opacity-100' : '!pointer-events-none !select-none opacity-0'} ${isOpen ? 'pointer-events-auto' : '!pointer-events-none'} fixed left-0 top-0 flex w-full flex-col items-start justify-start overflow-hidden p-2 transition-all`}
+      className={`${isVisible ? 'opacity-100' : '!pointer-events-none !select-none opacity-0'} ${isOpen ? 'pointer-events-auto' : '!pointer-events-none'} fixed left-0 top-0 flex w-fit flex-col items-start justify-start overflow-hidden p-2 transition-all`}
+      ref={menuRef}
       style={{ zIndex: 998 }}
     >
       <span
@@ -50,7 +65,7 @@ function Menu() {
         ></span>
       </span>
       <nav
-        className={`menu ${isOpen ? 'opacity-100' : 'opacity-0'} mx-auto w-11/12 overflow-hidden rounded-2xl border-4 border-black bg-white p-4 transition-all md:p-2 lg:mx-0 lg:w-6/12 2xl:w-4/12`}
+        className={`menu ${isOpen ? 'opacity-100' : 'opacity-0'} mx-auto w-fit overflow-hidden rounded-2xl border-4 border-black bg-white p-4 transition-all md:p-2 lg:mx-0`}
       >
         <ul>
           <ListItem
