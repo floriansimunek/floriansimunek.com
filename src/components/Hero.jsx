@@ -13,7 +13,7 @@ function Hero() {
           <div className="flex w-full flex-col gap-2 lg:gap-4 xl:flex-row">
             <Top>
               <ButtonLink
-                className="!w-full text-center"
+                className="!w-full text-center normal-case"
                 to="mailto:contact@floriansimunek.com"
                 target="_blank"
                 rel="noreferrer"
@@ -23,7 +23,7 @@ function Hero() {
             </Top>
             <Bottom className="flex gap-2 lg:gap-4">
               <ButtonLink
-                className="w-full text-center xl:w-fit"
+                className="w-full text-center normal-case xl:w-fit"
                 to="https://www.linkedin.com/in/simunek-florian/"
                 target="_blank"
                 rel="noreferrer"
@@ -31,7 +31,7 @@ function Hero() {
                 LinkedIn
               </ButtonLink>
               <ButtonLink
-                className="w-full text-center xl:w-fit"
+                className="w-full text-center normal-case xl:w-fit"
                 to="https://bento.me/florian-simunek"
                 target="_blank"
                 rel="noreferrer"

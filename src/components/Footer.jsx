@@ -40,9 +40,6 @@ function Footer() {
       <Menu>
         <List wide>
           <ListTitle>Navigation</ListTitle>
-          <ListItem onClick={scrollTop} to="">
-            Accueil
-          </ListItem>
           {Object.keys(services).map((key) => {
             const service = services[key];
 
@@ -145,13 +142,14 @@ function ListTitle({ children }) {
   );
 }
 
-function ListItem({ children, to, ...props }) {
+export function ListItem({ children, to, className, onClick, ...props }) {
   return (
     <li>
       <HashLink
         to={props.target ? to : `/#` + to}
-        className="group relative flex items-center justify-between rounded-md py-2 text-lg transition-all md:px-4 md:py-4 md:text-2xl hover:md:bg-primary hover:md:font-semibold"
+        className={`${className} group relative flex items-center justify-between rounded-md py-2 text-lg transition-all md:px-4 md:py-4 md:text-2xl hover:md:bg-primary hover:md:font-semibold`}
         smooth
+        onClick={onClick}
         {...props}
       >
         {children}
