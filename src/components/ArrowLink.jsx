@@ -6,14 +6,11 @@ function ArrowLink({ to = ' ', up = false, className = '', ...props }) {
       to={'#' + to}
       className={`${className}
       group relative block h-16 w-16 animate-bounce cursor-pointer overflow-hidden rounded-full lg:h-20 lg:w-20`}
+      aria-label={to ? 'Bouton vers' + to : props.onClick && 'Bouton'}
       smooth
       {...props}
     >
       <Arrow up={up} />
-      <span className="pointer-events-none invisible select-none opacity-0">
-        {to && 'Bouton vers' + to}
-        {props.onClick && 'Bouton'}
-      </span>
       <span className="absolute bottom-0 left-0 right-0 top-0 scale-0 rounded-full bg-black transition-all group-hover:scale-100"></span>
     </HashLink>
   );
