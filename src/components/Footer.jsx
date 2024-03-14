@@ -29,9 +29,9 @@ function Footer() {
       className="rounded-4xl flex min-h-svh w-full flex-col items-center justify-between gap-16 bg-white px-4 py-8 lg:gap-32 lg:p-16"
     >
       <div className="flex w-full flex-col text-center">
-        <h4 className="text-2xl font-bold uppercase md:text-3xl lg:text-4xl">
+        <h3 className="text-2xl font-bold uppercase md:text-3xl lg:text-4xl">
           un projet ? construisons le ensemble !
-        </h4>
+        </h3>
         <h3 className="mt-2 text-3xl font-extrabold uppercase md:text-6xl lg:text-8xl">
           Entrons en contact
         </h3>
@@ -142,7 +142,7 @@ function ListTitle({ children }) {
   );
 }
 
-export function ListItem({ children, to, className, onClick, ...props }) {
+export function ListItem({ children, to, className = '', onClick, ...props }) {
   return (
     <li>
       <HashLink

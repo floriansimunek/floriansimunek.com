@@ -1,6 +1,6 @@
 import { HashLink } from 'react-router-hash-link';
 
-function ArrowLink({ to = ' ', up = false, className, ...props }) {
+function ArrowLink({ to = ' ', up = false, className = '', ...props }) {
   return (
     <HashLink
       to={'#' + to}
@@ -15,7 +15,7 @@ function ArrowLink({ to = ' ', up = false, className, ...props }) {
   );
 }
 
-export function Arrow({ up, block = false, className }) {
+export function Arrow({ up, block = false, className = '' }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

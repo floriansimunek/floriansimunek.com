@@ -1,4 +1,4 @@
-function Container({ children, primary, id, className }) {
+function Container({ children, primary, id, className = '' }) {
   return (
     <div
       className={`${primary ? 'bg-primary' : 'bg-white'}

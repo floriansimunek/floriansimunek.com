@@ -86,7 +86,7 @@ function Hero() {
   );
 }
 
-function Container({ children, className, ...props }) {
+function Container({ children, className = '', ...props }) {
   return (
     <main
       className={`${className} h-fit w-full p-2 lg:p-4 xl:h-svh`}
@@ -135,7 +135,7 @@ function TextBanner() {
   );
 }
 
-function Stat({ className, children }) {
+function Stat({ className = '', children }) {
   return (
     <h3
       className={`${className} flex min-h-32 w-full flex-col items-center justify-center rounded-2xl bg-white text-2xl font-extrabold uppercase text-black md:text-4xl 2xl:text-5xl`}

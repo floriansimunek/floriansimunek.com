@@ -1,7 +1,7 @@
 function ButtonLink({
   children,
   to,
-  className,
+  className = '',
   primary = false,
   onClick,
   ...props

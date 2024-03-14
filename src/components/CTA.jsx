@@ -1,4 +1,4 @@
-function CTA({ className, dark = false, white = false }) {
+function CTA({ className = '', dark = false, white = false }) {
   return (
     <a
       href="https://floriansimunek.trafft.com/"

@@ -395,7 +395,7 @@ function ContactModal({
   );
 }
 
-function Inputs({ children, className }) {
+function Inputs({ children, className = '' }) {
   return (
     <span
       className={`${className} flex w-full flex-col items-center justify-center gap-2 text-base md:text-lg`}
