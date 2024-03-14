@@ -115,21 +115,21 @@ function TextBanner() {
         className="text-banner inline-block overflow-hidden whitespace-nowrap"
         aria-hidden
       >
-        <p className={`inline-block uppercase text-black`} aria-hidden>
+        <h6 className={`inline-block uppercase text-black`} aria-hidden>
           Florian SIMUNEK
-        </p>
+        </h6>
         &nbsp;
-        <p className={`inline-block uppercase text-black`} aria-hidden>
+        <h6 className={`inline-block uppercase text-black`} aria-hidden>
           Florian SIMUNEK
-        </p>
+        </h6>
         &nbsp;
-        <p className={`inline-block uppercase text-black`} aria-hidden>
+        <h6 className={`inline-block uppercase text-black`} aria-hidden>
           Florian SIMUNEK
-        </p>
+        </h6>
         &nbsp;
-        <p className={`inline-block uppercase text-black`} aria-hidden>
+        <h6 className={`inline-block uppercase text-black`} aria-hidden>
           Florian SIMUNEK
-        </p>
+        </h6>
       </div>
     </div>
   );
