@@ -49,7 +49,7 @@ function Menu() {
         ></span>
       </span>
       <nav
-        className={`menu ${isOpen ? 'w-11/12 border-4 border-black p-4 lg:w-6/12 lg:p-8 2xl:w-4/12' : 'w-0'} mx-auto overflow-hidden rounded-2xl bg-white transition-all lg:mx-0`}
+        className={`menu ${isOpen ? 'opacity-100' : 'opacity-0'} mx-auto w-11/12 overflow-hidden rounded-2xl border-4 border-black bg-white p-4 transition-all lg:mx-0 lg:w-6/12 lg:p-8 2xl:w-4/12`}
       >
         <ul>
           <ListItem
