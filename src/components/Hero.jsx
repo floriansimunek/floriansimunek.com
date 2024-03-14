@@ -49,13 +49,13 @@ function Hero() {
           />
           <div className="flex h-full w-full flex-col items-center justify-between py-4">
             <TextBanner />
-            <TextBanner primary />
             <TextBanner />
-            <TextBanner primary />
             <TextBanner />
-            <TextBanner primary />
             <TextBanner />
-            <TextBanner primary />
+            <TextBanner />
+            <TextBanner />
+            <TextBanner />
+            <TextBanner />
           </div>
         </div>
       </Top>
@@ -105,7 +105,7 @@ function Bottom({ children, ...props }) {
   return <div {...props}>{children}</div>;
 }
 
-function TextBanner({ primary }) {
+function TextBanner() {
   return (
     <div
       className="text-wrapper max-w-full overflow-hidden text-5xl font-extrabold"
@@ -115,31 +115,19 @@ function TextBanner({ primary }) {
         className="text-banner inline-block overflow-hidden whitespace-nowrap"
         aria-hidden
       >
-        <p
-          className={`inline-block uppercase ${primary ? 'text-primary' : 'text-black'}`}
-          aria-hidden
-        >
+        <p className={`inline-block uppercase text-black`} aria-hidden>
           Florian SIMUNEK
         </p>
         &nbsp;
-        <p
-          className={`inline-block uppercase ${primary ? 'text-primary' : 'text-black'}`}
-          aria-hidden
-        >
+        <p className={`inline-block uppercase text-black`} aria-hidden>
           Florian SIMUNEK
         </p>
         &nbsp;
-        <p
-          className={`inline-block uppercase ${primary ? 'text-primary' : 'text-black'}`}
-          aria-hidden
-        >
+        <p className={`inline-block uppercase text-black`} aria-hidden>
           Florian SIMUNEK
         </p>
         &nbsp;
-        <p
-          className={`inline-block uppercase ${primary ? 'text-primary' : 'text-black'}`}
-          aria-hidden
-        >
+        <p className={`inline-block uppercase text-black`} aria-hidden>
           Florian SIMUNEK
         </p>
       </div>
