@@ -1,7 +1,7 @@
-import { HashLink } from 'react-router-hash-link';
-import ArrowLink from './ArrowLink';
-import CTA from './CTA';
 import services from '@/services';
+import { HashLink } from 'react-router-hash-link';
+import { ArrowButton } from './ArrowLink';
+import CTA from './CTA';
 
 function getTime() {
   const date = new Date();
@@ -112,7 +112,7 @@ function Footer() {
           <Copyright />
           <Time />
         </div>
-        <ArrowLink onClick={scrollTop} up />
+        <ArrowButton onClick={scrollTop} up />
       </div>
     </footer>
   );
