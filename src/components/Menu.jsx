@@ -23,11 +23,11 @@ function Menu() {
 
   return (
     <div
-      className={`${isVisible ? 'opacity-100' : 'opacity-0'} ${isOpen ? 'pointer-events-auto' : 'pointer-events-none'} fixed left-0 top-0 flex w-full flex-col items-start justify-start overflow-hidden p-2 transition-all`}
+      className={`${isVisible ? 'opacity-100' : '!pointer-events-none !select-none opacity-0'} ${isOpen ? 'pointer-events-auto' : '!pointer-events-none'} fixed left-0 top-0 flex w-full flex-col items-start justify-start overflow-hidden p-2 transition-all`}
       style={{ zIndex: 998 }}
     >
       <span
-        className="button group pointer-events-auto relative mb-2 cursor-pointer overflow-hidden rounded-full border-4 border-black bg-white p-4 hover:text-primary lg:p-6"
+        className={`button group ${isVisible ? 'pointer-events-auto opacity-100' : 'pointer-events-none !select-none opacity-0'} relative mb-2 cursor-pointer overflow-hidden rounded-full border-4 border-black bg-white p-4 hover:text-primary lg:p-6`}
         onClick={() => setIsOpen((isOpen) => !isOpen)}
       >
         <svg
