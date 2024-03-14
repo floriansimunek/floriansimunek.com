@@ -1,5 +1,6 @@
+import CTA from '@components/CTA';
 import { ListItem } from '@components/Footer';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function Menu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,7 +50,7 @@ function Menu() {
         ></span>
       </span>
       <nav
-        className={`menu ${isOpen ? 'opacity-100' : 'opacity-0'} mx-auto w-11/12 overflow-hidden rounded-2xl border-4 border-black bg-white p-2 transition-all lg:mx-0 lg:w-6/12 2xl:w-4/12`}
+        className={`menu ${isOpen ? 'opacity-100' : 'opacity-0'} mx-auto w-11/12 overflow-hidden rounded-2xl border-4 border-black bg-white p-4 transition-all md:p-2 lg:mx-0 lg:w-6/12 2xl:w-4/12`}
       >
         <ul>
           <ListItem
@@ -80,6 +81,7 @@ function Menu() {
           >
             Liens
           </ListItem>
+          <CTA className="!mt-2 !text-xl md:!text-2xl 2xl:!text-3xl" dark />
         </ul>
       </nav>
     </div>
