@@ -4,11 +4,11 @@ function CTA({ className = '', dark = false, white = false }) {
       href="https://floriansimunek.trafft.com/"
       target="_blank"
       rel="noreferrer"
-      className={`group relative ${className} flex items-center justify-between gap-2 overflow-hidden rounded-2xl ${white ? 'bg-white' : 'bg-primary'} px-8 py-12 text-2xl font-extrabold uppercase text-black transition-all md:text-4xl lg:justify-around 2xl:text-5xl`}
+      className={`group relative ${className} flex items-center justify-between gap-2 overflow-hidden rounded-2xl ${white ? 'bg-white' : 'bg-primary'} text-darkgray px-8 py-12 text-2xl font-extrabold uppercase transition-all md:text-4xl lg:justify-around 2xl:text-5xl`}
     >
       <span
         className={`z-50 flex flex-col text-start lg:flex-row ${
-          dark ? 'group-hover:text-primary' : 'group-hover:text-black'
+          dark ? 'group-hover:text-primary' : 'group-hover:text-darkgray'
         }`}
       >
         Prendre&nbsp;<span>rendrez-vous</span>
@@ -18,8 +18,8 @@ function CTA({ className = '', dark = false, white = false }) {
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={3}
-        className={`h-12 w-12 stroke-black group-hover:translate-x-4 md:h-16 md:w-16 ${
-          dark ? 'group-hover:stroke-primary' : 'group-hover:stroke-black'
+        className={`stroke-darkgray h-12 w-12 group-hover:translate-x-4 md:h-16 md:w-16 ${
+          dark ? 'group-hover:stroke-primary' : 'group-hover:stroke-darkgray'
         } z-50 transition-all`}
       >
         <path
@@ -30,7 +30,7 @@ function CTA({ className = '', dark = false, white = false }) {
       </svg>
       <span
         className={`${
-          dark ? 'bg-black' : 'bg-white'
+          dark ? 'bg-darkgray' : 'bg-white'
         } absolute left-0 right-0 top-2/4 h-0 -translate-y-2/4 transition-all group-hover:h-full`}
       ></span>
     </a>

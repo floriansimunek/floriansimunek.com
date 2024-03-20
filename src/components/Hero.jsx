@@ -6,7 +6,7 @@ function Hero() {
   return (
     <Container className="flex flex-col gap-2 lg:gap-4" id="hero">
       <Top className="flex flex-col gap-2 md:flex-row lg:h-3/4 lg:gap-4">
-        <div className="flex h-fit w-full flex-col items-start justify-between gap-64 rounded-2xl bg-primary p-4 text-black sm:gap-32 lg:h-full lg:w-4/6 lg:p-8 xl:gap-0">
+        <div className="text-darkgray flex h-fit w-full flex-col items-start justify-between gap-64 rounded-2xl bg-primary p-4 sm:gap-32 lg:h-full lg:w-4/6 lg:p-8 xl:gap-0">
           <h1 className="text-5xl font-extrabold uppercase md:text-6xl lg:text-7xl xl:text-8xl">
             Prêt à faire de votre vision une réalité ?
           </h1>
@@ -116,19 +116,19 @@ function TextBanner() {
         className="text-banner inline-block overflow-hidden whitespace-nowrap"
         aria-hidden
       >
-        <h3 className={`inline-block uppercase text-black`} aria-hidden>
+        <h3 className={`text-darkgray inline-block uppercase`} aria-hidden>
           Florian SIMUNEK
         </h3>
         &nbsp;
-        <h3 className={`inline-block uppercase text-black`} aria-hidden>
+        <h3 className={`text-darkgray inline-block uppercase`} aria-hidden>
           Florian SIMUNEK
         </h3>
         &nbsp;
-        <h3 className={`inline-block uppercase text-black`} aria-hidden>
+        <h3 className={`text-darkgray inline-block uppercase`} aria-hidden>
           Florian SIMUNEK
         </h3>
         &nbsp;
-        <h3 className={`inline-block uppercase text-black`} aria-hidden>
+        <h3 className={`text-darkgray inline-block uppercase`} aria-hidden>
           Florian SIMUNEK
         </h3>
       </div>
@@ -139,7 +139,7 @@ function TextBanner() {
 function Stat({ className = '', children }) {
   return (
     <h2
-      className={`${className} flex min-h-32 w-full flex-col items-center justify-center rounded-2xl bg-white text-2xl font-extrabold uppercase text-black md:text-4xl 2xl:text-5xl`}
+      className={`${className} text-darkgray flex min-h-32 w-full flex-col items-center justify-center rounded-2xl bg-white text-2xl font-extrabold uppercase md:text-4xl 2xl:text-5xl`}
     >
       {children}
     </h2>

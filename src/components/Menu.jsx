@@ -42,7 +42,7 @@ function Menu() {
       style={{ zIndex: 998 }}
     >
       <span
-        className={`button group ${isVisible ? 'pointer-events-auto opacity-100' : 'pointer-events-none !select-none opacity-0'} relative mb-2 cursor-pointer overflow-hidden rounded-full border-4 border-black bg-white p-4 hover:text-primary lg:p-6`}
+        className={`button group ${isVisible ? 'pointer-events-auto opacity-100' : 'pointer-events-none !select-none opacity-0'} border-darkgray relative mb-2 cursor-pointer overflow-hidden rounded-full border-4 bg-white p-4 hover:text-primary lg:p-6`}
         onClick={() => setIsOpen((isOpen) => !isOpen)}
       >
         <svg
@@ -60,12 +60,12 @@ function Menu() {
           />
         </svg>
         <span
-          className="absolute left-2/4 top-2/4 h-full w-full -translate-x-2/4 -translate-y-2/4
-        scale-0 rounded-full bg-black transition-all group-hover:scale-125"
+          className="bg-darkgray absolute left-2/4 top-2/4 h-full w-full -translate-x-2/4
+        -translate-y-2/4 scale-0 rounded-full transition-all group-hover:scale-125"
         ></span>
       </span>
       <nav
-        className={`menu ${isOpen ? 'opacity-100' : 'opacity-0'} mx-auto w-fit overflow-hidden rounded-2xl border-4 border-black bg-white p-4 transition-all md:p-2 lg:mx-0`}
+        className={`menu ${isOpen ? 'opacity-100' : 'opacity-0'} border-darkgray mx-auto w-fit overflow-hidden rounded-2xl border-4 bg-white p-4 transition-all md:p-2 lg:mx-0`}
       >
         <ul>
           <ListItem

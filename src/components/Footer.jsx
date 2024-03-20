@@ -136,7 +136,7 @@ function List({ children, wide = false }) {
 
 function ListTitle({ children }) {
   return (
-    <li className="mb-2 w-full border-b-4 border-black text-2xl font-bold uppercase md:text-3xl">
+    <li className="border-darkgray mb-2 w-full border-b-4 text-2xl font-bold uppercase md:text-3xl">
       {children}
     </li>
   );
@@ -158,7 +158,7 @@ export function ListItem({ children, to, className = '', onClick, ...props }) {
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={3}
-          className={`${props.target ? '-rotate-45' : ''} hidden -translate-x-16 scale-0 stroke-black transition-all group-hover:translate-x-0 group-hover:scale-100 md:block md:h-8 md:w-8`}
+          className={`${props.target ? '-rotate-45' : ''} stroke-darkgray hidden -translate-x-16 scale-0 transition-all group-hover:translate-x-0 group-hover:scale-100 md:block md:h-8 md:w-8`}
         >
           <path
             strokeLinecap="round"

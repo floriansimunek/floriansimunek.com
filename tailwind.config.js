@@ -6,7 +6,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#FFEE67',
+        primary: '#fee826',
+        darkgray: '#181818',
       },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],

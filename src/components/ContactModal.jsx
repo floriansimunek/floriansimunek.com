@@ -109,10 +109,10 @@ function ContactModal({
   return (
     <>
       <div
-        className={`${isOpen ? 'block' : 'hidden'} dialog fixed bottom-0 left-0 right-0 top-0 h-screen w-screen bg-black bg-opacity-80`}
+        className={`${isOpen ? 'block' : 'hidden'} dialog bg-darkgray fixed bottom-0 left-0 right-0 top-0 h-screen w-screen bg-opacity-80`}
         onClick={(e) => closeModal(e)}
       >
-        <div className="dialog-inner absolute bottom-8 left-2/4 max-h-svh w-11/12 -translate-x-2/4 rounded-2xl border-4 border-black bg-primary p-4 text-black md:bottom-2 md:w-7/12 lg:w-5/12 lg:p-8 2xl:w-4/12">
+        <div className="dialog-inner border-darkgray text-darkgray absolute bottom-8 left-2/4 max-h-svh w-11/12 -translate-x-2/4 rounded-2xl border-4 bg-primary p-4 md:bottom-2 md:w-7/12 lg:w-5/12 lg:p-8 2xl:w-4/12">
           <form
             ref={form}
             onSubmit={sendEmail}
@@ -125,7 +125,7 @@ function ContactModal({
                   type="email"
                   name="email"
                   id={`email-${formatText(title)}`}
-                  className="w-full rounded-md bg-black p-4 text-white"
+                  className="bg-darkgray w-full rounded-md p-4 text-white"
                   placeholder="exemple@exemple.com"
                   autoComplete="email"
                   value={email}
@@ -141,7 +141,7 @@ function ContactModal({
                   id={`object-${formatText(title)}`}
                   value={object}
                   readOnly
-                  className="disabled w-full rounded-md bg-gray-800 p-4 text-black"
+                  className="disabled text-darkgray w-full rounded-md bg-gray-800 p-4"
                 />
               </Inputs>
             </div>
@@ -187,7 +187,7 @@ function ContactModal({
               <textarea
                 name="message"
                 id={`message-${formatText(title)}`}
-                className="h-48 w-full resize-none rounded-md bg-black p-4 text-white"
+                className="bg-darkgray h-48 w-full resize-none rounded-md p-4 text-white"
                 placeholder="Décrivez moi votre projet avec le plus de détails possible 😉"
                 value={message}
                 onInput={(event) => setMessage(event.target.value)}
@@ -210,7 +210,7 @@ function ContactModal({
                 </div>
               )}
             <button
-              className="mx-auto flex cursor-pointer items-center justify-center rounded-md border-2 border-black bg-black px-4 py-2 text-lg uppercase text-primary transition-all hover:bg-primary hover:text-black lg:text-xl"
+              className="border-darkgray bg-darkgray hover:text-darkgray mx-auto flex cursor-pointer items-center justify-center rounded-md border-2 px-4 py-2 text-lg uppercase text-primary transition-all hover:bg-primary lg:text-xl"
               type="submit"
               disabled={processing}
             >
@@ -263,7 +263,7 @@ function ContactModal({
       </div>
       {successModalOpen && (
         <div
-          className="fixed inset-0 h-full w-full bg-black bg-opacity-80"
+          className="bg-darkgray fixed inset-0 h-full w-full bg-opacity-80"
           style={{ zIndex: '99999' }}
           onClick={(e) => {
             if (e.target === e.currentTarget) {
@@ -296,7 +296,7 @@ function ContactModal({
               />
             </svg>
           </span>
-          <div className="absolute left-1/2 top-1/2 h-auto w-11/12 -translate-x-1/2 -translate-y-1/2 rounded-2xl border-4 border-black bg-primary p-4 text-center sm:w-10/12 sm:p-8 lg:w-6/12 2xl:w-2/6">
+          <div className="border-darkgray absolute left-1/2 top-1/2 h-auto w-11/12 -translate-x-1/2 -translate-y-1/2 rounded-2xl border-4 bg-primary p-4 text-center sm:w-10/12 sm:p-8 lg:w-6/12 2xl:w-2/6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -312,11 +312,11 @@ function ContactModal({
               />
             </svg>
 
-            <h5 className="text-2xl font-semibold leading-6 text-black">
+            <h5 className="text-darkgray text-2xl font-semibold leading-6">
               Votre email à été envoyé
             </h5>
             <div className="mt-4">
-              <p className="text-xl text-black">
+              <p className="text-darkgray text-xl">
                 Bonjour 👋
                 <br />
                 et merci pour votre message !
@@ -332,7 +332,7 @@ function ContactModal({
       )}
       {errorModalOpen && (
         <div
-          className="fixed inset-0 h-full w-full bg-black bg-opacity-80"
+          className="bg-darkgray fixed inset-0 h-full w-full bg-opacity-80"
           style={{ zIndex: '99999' }}
           onClick={(e) => {
             if (e.target === e.currentTarget) {
@@ -365,7 +365,7 @@ function ContactModal({
               />
             </svg>
           </span>
-          <div className="absolute left-1/2 top-1/2 h-auto w-11/12 -translate-x-1/2 -translate-y-1/2 rounded-2xl border-4 border-black bg-primary p-4 text-center sm:w-10/12 sm:p-8 lg:w-6/12 2xl:w-2/6">
+          <div className="border-darkgray absolute left-1/2 top-1/2 h-auto w-11/12 -translate-x-1/2 -translate-y-1/2 rounded-2xl border-4 bg-primary p-4 text-center sm:w-10/12 sm:p-8 lg:w-6/12 2xl:w-2/6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -380,23 +380,23 @@ function ContactModal({
                 d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
               />
             </svg>
-            <h5 className="text-2xl font-semibold leading-6 text-black">
+            <h5 className="text-darkgray text-2xl font-semibold leading-6">
               Une erreur est survenue
             </h5>
             <div className="mt-2">
-              <p className="text-lg text-black">
+              <p className="text-darkgray text-lg">
                 Votre email n&apos;a pas été envoyé, complétez à nouveau le
                 formulaire
               </p>
               <br />
-              <p className="text-lg text-black">
+              <p className="text-darkgray text-lg">
                 Ça ne fonctionne toujours pas ?
                 <br />
                 Envoyez-moi un email directement
                 <br />
                 <a
                   href="mailto:contact@floriansimunek.com"
-                  className="mx-auto mt-4 block w-fit rounded-md bg-black px-4 py-2 text-primary"
+                  className="bg-darkgray mx-auto mt-4 block w-fit rounded-md px-4 py-2 text-primary"
                 >
                   <span aria-hidden="true">&rarr;&nbsp;</span>
                   contact@floriansimunek.com
@@ -426,8 +426,8 @@ function Radio({ value, title, budget, setBudget }) {
   return (
     <label
       htmlFor={`budget-${formatText(value)}-${formatText(title)}`}
-      className={`${isChecked ? 'bg-black text-primary' : 'bg-primary text-black'}
-      flex cursor-pointer flex-wrap items-center justify-center gap-2 rounded-md border-2 border-black px-4 py-2 font-semibold`}
+      className={`${isChecked ? 'bg-darkgray text-primary' : 'text-darkgray bg-primary'}
+      border-darkgray flex cursor-pointer flex-wrap items-center justify-center gap-2 rounded-md border-2 px-4 py-2 font-semibold`}
       onClick={() => setBudget(value)}
     >
       <input
